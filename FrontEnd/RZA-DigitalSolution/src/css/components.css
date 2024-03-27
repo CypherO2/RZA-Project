@@ -1,0 +1,60 @@
+.rounded-corners-dark {
+  border-radius: 10px;
+  background-color: #212529;
+}
+.corners-dark {
+  background-color: #212529;
+  filter: opacity(50%);
+}
+.rounded-corners-opaque {
+  border-radius: 10px;
+  opacity: 50%;
+  background-color: #212529;
+}
+.opacity-reset {
+  opacity: 100%;
+}
+.image-responsive {
+  width: 90%;
+  height: auto;
+}
+.rounded-corners-light {
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
+}
+.rounded-corners-border {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(129, 129, 129, 0.37);
+}
+.button1 {
+  all: "unset";
+  font-family: "Helvetica,Arial,sans-serif";
+  display: "inline-block";
+  max-width: "100%";
+  white-space: "nowrap";
+  overflow: "hidden";
+  text-overflow: "ellipsis";
+  background-color: "#0445AF";
+  color: "#fff";
+  font-size: "20px";
+  border-radius: "25px";
+  padding: "0 33px";
+  font-weight: "bold";
+  height: "50px";
+  cursor: "pointer";
+  line-height: "50px";
+  text-align: "center";
+  margin: "0";
+  text-decoration: "none";
+}
+.form1 {
+  margin: 0;
+  padding: 0;
+}
+iframe {
+  border-radius: 0 !important;
+}
+.darkened-image {
+  filter: brightness(50%);
+}
