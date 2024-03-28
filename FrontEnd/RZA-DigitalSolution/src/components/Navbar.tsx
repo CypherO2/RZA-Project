@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 import Logo from "../assets/RZA2.png";
 import LoginModal from "./LoginModal";
 import { Menu, Home } from "@carbon/react/icons";
@@ -10,6 +10,7 @@ import {
   ROOM_PATH,
   STORE_PATH,
 } from "../constants/paths";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   // const themeContext = useContext(ThemeContext);
@@ -24,16 +25,16 @@ function NavBar() {
       >
         <Container>
           <Nav>
-            <Nav.Link href="/" >
+            <Button variant="tertiary" href="/">
               <Home size="40" />
-            </Nav.Link>
+            </Button>
           </Nav>
-          <Navbar.Brand href="/">
+          <Navbar.Brand className="mx-5" href="/">
             <img
               src={Logo}
-              width="240"
+              width="250"
               height="60"
-              className="d-inline-block align-top rounded mx-4"
+              className="mx-5"
               alt="Logo"
             />
           </Navbar.Brand>
