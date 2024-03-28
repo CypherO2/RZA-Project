@@ -1,6 +1,15 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Dropdown } from "react-bootstrap";
 import Logo from "../assets/RZA2.png";
+import LoginModal from "./LoginModal";
 import { Menu } from "@carbon/react/icons";
+import {
+  ABOUT_PATH,
+  CONTACTS_PATH,
+  FAQ_PATH,
+  LEARN_PATH,
+  ROOM_PATH,
+  STORE_PATH,
+} from "../constants/paths";
 
 function NavBar() {
   // const themeContext = useContext(ThemeContext);
@@ -17,29 +26,30 @@ function NavBar() {
           <Navbar.Brand href="/">
             <img
               src={Logo}
-              width="300"
-              height="80"
+              width="240"
+              height="60"
               className="d-inline-block align-top rounded"
               alt="Logo"
             />
           </Navbar.Brand>
           <Nav></Nav>
           <Nav>
-            <NavDropdown
-              title={<Menu size="40" />}
-              className="text-center"
-              id="collapsible-nav-dropdown"
-            >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            <LoginModal />
+
+            <Dropdown>
+              <Dropdown.Toggle variant="tertiary" id="dropdown-basic">
+                <Menu size="40" />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href={ABOUT_PATH}>About Us</Dropdown.Item>
+                <Dropdown.Item href={CONTACTS_PATH}>Contact Us</Dropdown.Item>
+                <Dropdown.Item href={ROOM_PATH}>Rooms</Dropdown.Item>
+                <Dropdown.Item href={STORE_PATH}>Store</Dropdown.Item>
+                <Dropdown.Item href={LEARN_PATH}>RZA Learning</Dropdown.Item>
+                <Dropdown.Item href={FAQ_PATH}>FAQ</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Nav>
         </Container>
       </Navbar>
