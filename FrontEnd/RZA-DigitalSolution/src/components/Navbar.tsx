@@ -1,7 +1,7 @@
-import { Navbar, Container, Nav, NavDropdown, Dropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
 import Logo from "../assets/RZA2.png";
 import LoginModal from "./LoginModal";
-import { Menu } from "@carbon/react/icons";
+import { Menu, Home } from "@carbon/react/icons";
 import {
   ABOUT_PATH,
   CONTACTS_PATH,
@@ -23,16 +23,20 @@ function NavBar() {
         expand="lg"
       >
         <Container>
+          <Nav>
+            <Nav.Link href="/" >
+              <Home size="40" />
+            </Nav.Link>
+          </Nav>
           <Navbar.Brand href="/">
             <img
               src={Logo}
               width="240"
               height="60"
-              className="d-inline-block align-top rounded"
+              className="d-inline-block align-top rounded mx-4"
               alt="Logo"
             />
           </Navbar.Brand>
-          <Nav></Nav>
           <Nav>
             <LoginModal />
 
