@@ -1,9 +1,14 @@
 import { useEffect } from "react";
+import { Container } from "react-bootstrap";
 
 function StorePage() {
   useEffect(() => {
     document.title = "Riget Zoo | Store Portal";
   });
-  return <></>;
+  return (
+    <>
+      <Container></Container>
+    </>
+  );
 }
 export default StorePage;

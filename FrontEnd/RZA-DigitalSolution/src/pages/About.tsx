@@ -1,9 +1,14 @@
 import { useEffect } from "react";
+import { Container } from "react-bootstrap";
 
 function AboutPage() {
   useEffect(() => {
     document.title = "Riget Zoo | About Us";
   });
-  return <></>;
+  return (
+    <>
+      <Container></Container>
+    </>
+  );
 }
 export default AboutPage;
