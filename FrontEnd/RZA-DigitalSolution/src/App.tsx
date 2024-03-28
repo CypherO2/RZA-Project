@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { INDEX_PATH } from "./constants/paths";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/Navbar";
+import SiteFooter from "./components/SiteFooter";
 import Homepage from "./pages/Home";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path={INDEX_PATH} element={<Homepage />} />
       </Routes>
+      <SiteFooter/>
     </>
   );
 }
