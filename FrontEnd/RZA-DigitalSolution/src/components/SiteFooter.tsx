@@ -7,50 +7,47 @@ function SiteFooter() {
         <MDBContainer className="p-4">
           <MDBRow>
             <MDBCol lg="6" md="12" className="mb-4 mb-md-0">
-              <h5 className="text-uppercase fw-bold">Our Story</h5>
-              <p>
-                Once a modest corner cafe in a small town, our coffee shop has
-                grown from humble beginnings. What started as a cozy gathering
-                place for locals seeking a comforting cup of coffee has
-                blossomed into a beloved community hub, where friendships are
-                forged over steaming mugs of freshly brewed java. Our commitment
-                to quality and warm hospitality has remained unchanged, making
-                us a cherished part of the neighborhood's story.
-              </p>
+              <h5 className="text-uppercase fw-bold">Riget Zoo Adventures</h5>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d349152.5284736859!2d-5.3108256010794195!3d53.71877623028436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1711626192004!5m2!1sen!2suk"
+                width="800"
+                height="150"
+                loading="lazy"
+              ></iframe>
             </MDBCol>
             <MDBCol> </MDBCol>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
               <h5 className="text-uppercase fw-bold">Social Links</h5>
 
               <ul className="list-unstyled mb-0">
-                <li>
+                <li className="my-1">
                   <a
                     href="https://github.com/CypherO2"
-                    className="text-secondary"
+                    className="text-secondary fs-5"
                   >
                     Github
                   </a>
                 </li>
-                <li>
+                <li className="my-1">
                   <a
                     href="https://www.youtube.com/@Nox-Noctiflora"
-                    className="text-secondary"
+                    className="text-secondary fs-5"
                   >
                     YouTube
                   </a>
                 </li>
-                <li>
+                <li className="my-1">
                   <a
                     href="https://discord.gg/3zTkHD6v"
-                    className="text-secondary"
+                    className="text-secondary fs-5"
                   >
                     Discord
                   </a>
                 </li>
-                <li>
+                <li className="my-1">
                   <a
                     href="https://uk.linkedin.com/in/charles-presley-b75399244"
-                    className="text-secondary"
+                    className="text-secondary fs-5"
                   >
                     LinkedIn
                   </a>
