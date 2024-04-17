@@ -14,7 +14,7 @@ const DASHBOARD_PATH = "/dashboard";
 const MSA_PATH = "/modern-slavery-act";
 const PP_PATH = "/privacy-policy";
 const COOKIE_PATH = "/cookie-policy";
-const TANDC_PATH = "/tcs-and-cs";
+const TANDC_PATH = "/ts-and-cs";
 
 export {
   FAQ_PATH,
