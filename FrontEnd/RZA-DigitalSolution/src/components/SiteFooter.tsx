@@ -1,4 +1,6 @@
 import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
+import { Row } from "react-bootstrap";
+import logo from "../assets/RZA2.png";
 
 function SiteFooter() {
   return (
@@ -6,17 +8,43 @@ function SiteFooter() {
       <MDBFooter bgColor="dark" className="text-secondary">
         <MDBContainer className="p-4">
           <MDBRow>
-            <MDBCol lg="6" md="12" className="mb-4 mb-md-0">
-              <h5 className="text-uppercase fw-bold">Riget Zoo Adventures</h5>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d349152.5284736859!2d-5.3108256010794195!3d53.71877623028436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1711626192004!5m2!1sen!2suk"
-                width="800"
-                height="150"
-                loading="lazy"
-              ></iframe>
+            <MDBCol>
+              <Row>
+                <img src={logo} style={{ height: "60px", width: "250px" }} />
+                <p>
+                  Riget Zoo Adventures, 23 Fake Rd, Faketonn
+                  <br />
+                  United Kingdom, 3NG1 4ND
+                </p>
+                <p>Registered Charity No. 0000000 </p>
+              </Row>
             </MDBCol>
-            <MDBCol> </MDBCol>
-            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+            <MDBCol lg="3" md="3" className="mb-4 mb-md-0">
+              <h5 className="text-uppercase fw-bold">Riget Zoo Adventures</h5>
+              <ul className="list-unstyled mb-0">
+                <li className="my-1">
+                  <a href="/modern-slavery-act" className="text-secondary fs-5">
+                    Modern Slavery Act
+                  </a>
+                </li>
+                <li className="my-1">
+                  <a href="/privacy-policy" className="text-secondary fs-5">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li className="my-1">
+                  <a href="/cookie-policy" className="text-secondary fs-5">
+                    Cookie Policy
+                  </a>
+                </li>
+                <li className="my-1">
+                  <a href="/ts-and-cs" className="text-secondary fs-5">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </MDBCol>
+            <MDBCol lg="3" md="3" className="mb-4 mb-md-0">
               <h5 className="text-uppercase fw-bold">Social Links</h5>
 
               <ul className="list-unstyled mb-0">
@@ -63,7 +91,7 @@ function SiteFooter() {
         >
           ©2024 Copyright:{" "}
           <a className="text-secondary" href="">
-            PLACEHOLDER
+            Riget Zoo Adventures Ltd
           </a>
         </div>
       </MDBFooter>
