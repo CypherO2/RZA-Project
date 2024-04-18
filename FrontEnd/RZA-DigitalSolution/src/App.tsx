@@ -35,27 +35,33 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TsandCs";
 import "./css/components.css";
 import SignupForm from "./components/SignUp";
+import AccountProvider from "./components/accountProvider";
+import BasketProvider from "./components/BasketProvider";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path={INDEX_PATH} element={<Homepage />} />
-        <Route path={ABOUT_PATH} element={<AboutPage />} />
-        <Route path={STORE_PATH} element={<StorePage />} />
-        <Route path={FAQ_PATH} element={<FAQ />} />
-        <Route path={ROOM_PATH} element={<RoomPage />} />
-        <Route path={LEARN_PATH} element={<LearningPage />} />
-        <Route path={DASHBOARD_PATH} element={<DashboardPage />} />
-        <Route path={STAFF_DASHBOARD_PATH} element={<StaffDashboard />} />
-        <Route path={MSA_PATH} element={<MSA />} />
-        <Route path={COOKIE_PATH} element={<CookiePolicy />} />
-        <Route path={TANDC_PATH} element={<TermsAndConditions />} />
-        <Route path={PP_PATH} element={<PrivacyPolicy />} />
-        <Route path={SIGNUP_PATH} element={<SignupForm/>} />
-      </Routes>
-      <SiteFooter />
+      <AccountProvider>
+        <BasketProvider>
+          <NavBar />
+          <Routes>
+            <Route path={INDEX_PATH} element={<Homepage />} />
+            <Route path={ABOUT_PATH} element={<AboutPage />} />
+            <Route path={STORE_PATH} element={<StorePage />} />
+            <Route path={FAQ_PATH} element={<FAQ />} />
+            <Route path={ROOM_PATH} element={<RoomPage />} />
+            <Route path={LEARN_PATH} element={<LearningPage />} />
+            <Route path={DASHBOARD_PATH} element={<DashboardPage />} />
+            <Route path={STAFF_DASHBOARD_PATH} element={<StaffDashboard />} />
+            <Route path={MSA_PATH} element={<MSA />} />
+            <Route path={COOKIE_PATH} element={<CookiePolicy />} />
+            <Route path={TANDC_PATH} element={<TermsAndConditions />} />
+            <Route path={PP_PATH} element={<PrivacyPolicy />} />
+            <Route path={SIGNUP_PATH} element={<SignupForm />} />
+          </Routes>
+          <SiteFooter />
+        </BasketProvider>
+      </AccountProvider>
     </>
   );
 }
