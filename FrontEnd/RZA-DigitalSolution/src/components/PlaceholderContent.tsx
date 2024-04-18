@@ -1,6 +1,9 @@
 import { Badge, Col, Placeholder } from "react-bootstrap";
 import "../css/components.css";
 
+/* The `PHContent` function is a React functional component that returns JSX elements to render a
+placeholder content. The content includes placeholders from the react-bootstrap library with
+animations and styling classes applied to create a visually appealing placeholder UI. */
 function PHContent() {
   return (
     <>

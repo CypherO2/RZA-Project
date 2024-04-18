@@ -12,6 +12,10 @@ import axios from "axios";
 import { AccountDetailsContext } from "./accountProvider";
 import { useNavigate } from "react-router-dom";
 import { INDEX_PATH } from "../constants/paths";
+/* The `SignupForm` function is a React functional component that represents a form for user sign up.
+Within this function, the component manages the state of various form fields such as username,
+password, email, and confirmation password using the `useState` hook. It also utilizes the
+`useEffect` hook to set the document title when the component is loaded. */
 function SignupForm() {
   // sets the assets that need to be loaded immediately on reload/ load
   useEffect(() => {

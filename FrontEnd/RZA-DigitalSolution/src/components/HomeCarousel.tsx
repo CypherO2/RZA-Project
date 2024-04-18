@@ -7,6 +7,12 @@ import {
   MDBCarouselCaption,
 } from "mdb-react-ui-kit";
 
+/* The `function HomeCarousel()` is a React functional component that defines a carousel component
+using the MDBCarousel, MDBCarouselItem, and MDBCarouselCaption components from the mdb-react-ui-kit
+library. This carousel component displays three images with corresponding captions in a slideshow
+format. Each MDBCarouselItem represents a slide in the carousel with an image, a title, and a
+description. The images are imported using the Img1, Img2, and Img3 variables from the specified
+file paths. The carousel is set to fade between slides and show indicators for navigation. */
 function HomeCarousel() {
   return (
     <>

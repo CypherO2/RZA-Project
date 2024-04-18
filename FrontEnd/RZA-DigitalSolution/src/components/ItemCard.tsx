@@ -3,6 +3,14 @@ import "../css/components.css";
 import { AddAlt, SubtractAlt, Delete } from "@carbon/react/icons";
 import { BasketContext } from "./BasketProvider";
 import { useContext } from "react";
+
+/* The `export interface ItemCardProps {` statement is defining an interface named `ItemCardProps` that
+specifies the shape of the props that can be passed to the `ItemCards` component. By exporting this
+interface, it allows other components or files to import and use this interface to ensure that the
+props passed to `ItemCards` adhere to a specific structure. In this case, `ItemCardProps` interface
+defines the expected props for the `ItemCards` component, including `item` (string), `quantity`
+(number), `price` (number), and `url` (string). This helps in type-checking and providing clarity on
+the expected props for the component. */
 export interface ItemCardProps {
   item: string;
   quantity: number;
@@ -10,6 +18,11 @@ export interface ItemCardProps {
   url: string;
 }
 // props to decide what the function can take as params
+/* This line of code is defining a functional component named `ItemCards` that takes in props of type
+`ItemCardProps`. The `ItemCardProps` interface specifies the shape of the props that the `ItemCards`
+component can receive, which includes `item` (string), `quantity` (number), `price` (number), and
+`url` (string). By destructuring these props in the function signature `({ item, quantity, price,
+url })`, the component can access and use these values within its JSX markup. */
 function ItemCards({ item, quantity, price, url }: ItemCardProps) {
   const basketContext = useContext(BasketContext);
   return (

@@ -13,6 +13,8 @@ import axios from "axios";
 import { AccountDetailsContext } from "./accountProvider";
 import { useNavigate } from "react-router-dom";
 import { INDEX_PATH } from "../constants/paths";
+/* The `StaffSignupForm` function is a React functional component that represents a form for staff
+signup. Here is a breakdown of what it does: */
 function StaffSignupForm() {
   // Use Effect to set things for the page upon reload / load
   useEffect(() => {
@@ -37,6 +39,9 @@ function StaffSignupForm() {
   const navigate = useNavigate();
 
   // handle submit function, is asyncronous, checks username and password, and sett the response text
+  /* The `const handleSubmit = async (event: FormEvent) => {` function in the `StaffSignupForm`
+  component is an asynchronous function that handles the form submission event. Here is a breakdown
+  of what it does: */
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setResponseText("");

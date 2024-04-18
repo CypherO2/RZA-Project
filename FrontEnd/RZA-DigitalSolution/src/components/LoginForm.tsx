@@ -13,6 +13,11 @@ import { useNavigate } from "react-router-dom";
 import { AccountDetailsContext } from "./accountProvider";
 
 // Form for Logging in
+/* The `function LoginForm() {` is defining a functional component in React. This component represents
+a login form that allows users to enter their username and password to log in. Inside the component,
+it uses hooks like `useState` to manage the state of the username, password, and response text. It
+also uses the `useContext` hook to access the `AccountDetailsContext` which stores account
+information. */
 function LoginForm() {
   // determines if the person if logged in
   const accountDetailsContext = useContext(AccountDetailsContext);
@@ -23,6 +28,9 @@ function LoginForm() {
   const navigate = useNavigate();
 
   //ensures info is ok to query the development environment
+  /* The `const handleSubmit = async (event: FormEvent) => {` function is defining an asynchronous
+  function in JavaScript. This function is responsible for handling the form submission event in the
+  login form. When the form is submitted, this function is triggered. */
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setResponseText("");

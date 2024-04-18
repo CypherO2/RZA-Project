@@ -2,6 +2,12 @@ import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 import { Row } from "react-bootstrap";
 import logo from "../assets/RZA2.png";
 
+/* The `SiteFooter` function is a React functional component that defines the structure and content of
+a footer section for a website. It includes various elements such as company information, address,
+charity details, links to legal policies (Modern Slavery Act, Privacy Policy, Cookie Policy, Terms
+and Conditions), and social media links (Github, YouTube, Discord, LinkedIn). The footer is styled
+using MDBReactUIKit and React Bootstrap components to create a visually appealing and responsive
+layout. */
 function SiteFooter() {
   return (
     <>

@@ -1,5 +1,13 @@
 import { useState } from "react";
 // interface to determine Context type
+
+/* The line `export interface BasketContextType {` is defining an interface named `BasketContextType`
+that specifies the structure of the context object used in the application. This interface defines
+the shape of the context object that will be shared and consumed by components within the
+application. It includes the properties `basket`, `addToBasket`, `removeFromBasket`, and
+`deleteFromBasket`, along with their respective types. By exporting this interface, it can be
+imported and used in other parts of the application to ensure consistency in the structure of the
+context object. */
 export interface BasketContextType {
   basket: { [item: string]: number };
   addToBasket: (item: string) => void;
@@ -7,6 +15,10 @@ export interface BasketContextType {
   deleteFromBasket: (item: string) => void;
 }
 // Function to call hook for using the Basket
+/* This line of code defines a TypeScript function named `useBasket` that returns an object conforming
+to the `BasketContextType` interface. The function is responsible for managing the state of a
+shopping basket within a React component. It initializes the basket state by retrieving data from
+the local storage or setting an empty object if no data is found. */
 function useBasket(): BasketContextType {
   const basketObject = localStorage.getItem("basket");
   const [basket, setBasket] = useState(

@@ -16,7 +16,9 @@ import { BasketContext } from "./BasketProvider";
 import { AccountDetailsContext } from "./accountProvider";
 import { User } from "@carbon/react/icons";
 
-// Conditional Display Function to Ensure the person is loggedout before they can create an account
+/* The `Log()` function is a conditional display function that checks if the user is logged in or not.
+It uses the `useContext` hook to access the `AccountDetailsContext` which presumably holds
+information about the user's account details. */
 function Log() {
   const accountDetailsContext = useContext(AccountDetailsContext);
   if (Object.is(accountDetailsContext?.accountDetails, null)) {
@@ -44,6 +46,9 @@ function Log() {
   }
 }
 
+/* The `NavBar` function is a React functional component that defines the structure and content of a
+navigation bar for a website. Inside the `NavBar` function, the component is using various
+components and elements from the `react-bootstrap` library to create a responsive navigation bar. */
 function NavBar() {
   const basketContext = useContext(BasketContext);
   console.log();
