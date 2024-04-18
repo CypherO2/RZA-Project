@@ -44,11 +44,12 @@ def LoginDetails():
         try:
             cu = conn.cursor()
             print("Cursor Created")
-            query = """Select Users.Password From Users Where Users.Username = ?"""
+            query = """Select * From Users Where Users.Username = ?"""
             cu.execute(query, (username,))
             results = cu.fetchall()
             print(results)
             for i in results:
+                print(i)
                 logins[i[2]] = i[3]
                 role = i[1]
                 print(role)
