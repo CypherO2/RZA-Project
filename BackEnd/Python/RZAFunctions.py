@@ -28,12 +28,16 @@ def PasswordCheck(password):
 
 def UsernameCheck(username):
     if len(username) < 5:
+        print(len(username))
         return True
     elif len(username) > 16:
+        print(len(username))
         return True
     elif not username.isalnum():
+        print(len(username))
         return True
     else:
+        print(len(username))
         return False
 
 
@@ -62,9 +66,9 @@ def EmailCheck(email):
     # pass the regular expression
     # and the string into the fullmatch() method
     if re.fullmatch(regex, email):
-        return True
-    else:
         return False
+    else:
+        return True
 
 
 # -------------------------- #

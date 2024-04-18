@@ -20,7 +20,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 def LoginDetails():
     logins = {}
     print("Request Recieved")
-    with sqlite3.connect(r"Lorem-Ipsum/Database/RZA-Data.db") as conn:
+    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
         print("Connection Established")
         username = request.json.get("username")
         if LF.UsernameCheck(username):
@@ -69,10 +69,10 @@ def LoginDetails():
 @app.route("/signup", methods=["POST"])
 def SignupDetails():
     print("Request Recieved")
-    with sqlite3.connect(r"Lorem-Ipsum/Database/RZA-Data.db") as conn:
+    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
         print("Connection Established")
         username = request.json.get("username")
-        print(username)
+        print("username:", username)
         if LF.UsernameCheck(username):
             return jsonify(
                 {
@@ -81,12 +81,12 @@ def SignupDetails():
                 }
             )
         email = request.json.get("email")
-        print(email)
+        print("email:", email)
         if LF.EmailCheck(email):
             return jsonify(
                 {
                     "success": False,
-                    "message": "Username must be 5 - 16 characters longs and alphanumeric",
+                    "message": "Email is not valid",
                 }
             )
         count = """Select Count(Username) From Users Where Username = ?"""
@@ -110,11 +110,11 @@ def SignupDetails():
         salt = gensalt()
         hashedPassword = hashpw(password, salt)
         try:
-            statement = """INSERT INTO Users(Forename, Surname, Username, DOB, Password, RoleID) VALUES(?,?,?,?,?,?)"""
-            CUSTOMER_ROLE = 0
+            statement = """INSERT INTO Users(UTypeID, Username, Password, Email) VALUES(?,?,?,?)"""
+            CUSTOMER_ROLE = 2
             cu.execute(
                 statement,
-                (forename, surname, username, dob, hashedPassword, CUSTOMER_ROLE),
+                (CUSTOMER_ROLE, username, hashedPassword, email),
             )
             conn.commit()
             return jsonify({"success": True, "message": "Login Successful", "role": 2})
@@ -126,7 +126,7 @@ def SignupDetails():
 @app.route("/staffsignup", methods=["POST"])
 def StaffSignupDetails():
     print("Request Recieved")
-    with sqlite3.connect(r"Lorem-Ipsum/Database/RZA-Data.db") as conn:
+    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
         print("Connection Established")
         email = request.json.get("email")
         if not LF.EmailCheck(email):
@@ -161,11 +161,11 @@ def StaffSignupDetails():
         salt = gensalt()
         hashedPassword = hashpw(password, salt)
         try:
-            statement = """INSERT INTO Users(Username, Password, Email) VALUES(?,?,?)"""
+            statement = """INSERT INTO Users(UTypeID, Username, Password, Email) VALUES(?,?,?,?)"""
             STAFF_DEFAULT_ROLE = 4
             cu.execute(
                 statement,
-                (username, hashedPassword, email, STAFF_DEFAULT_ROLE),
+                (STAFF_DEFAULT_ROLE, username, hashedPassword, email),
             )
             conn.commit()
             return jsonify(
