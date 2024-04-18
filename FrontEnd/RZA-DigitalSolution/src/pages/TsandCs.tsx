@@ -6,8 +6,9 @@ export default function TermsAndConditions() {
       <Row>
         <Col></Col>
         <Col xs="6">
-          <h1 className="py-4 fw-bold">Cookies Policy</h1>
-          <h1 className="fw-bold py-4">Terms and Conditions</h1>
+          <h1 className="fw-bold py-4" style={{ fontFamily: "cursive" }}>
+            Terms and Conditions
+          </h1>
 
           <h2 className="fw-bold py-2">1. Introduction</h2>
 

@@ -2,6 +2,7 @@ import { Container, Row } from "react-bootstrap";
 import HomeCarousel from "../components/HomeCarousel";
 import PHContent from "../components/PlaceholderContent";
 import { useEffect } from "react";
+import "../css/components.css";
 
 function Homepage() {
   useEffect(() => {
@@ -11,6 +12,19 @@ function Homepage() {
     <>
       <HomeCarousel />
       <Container>
+        <h1 className="my-4 text-center">
+          Welcome to{" "}
+          <span
+            className="fw-bold"
+            style={{
+              color: "#fa8203",
+              textShadow:
+                "-1.5px -1.5px 1 #000, 1.5px -1.5px 1 #000, -1.5px 1.5px 1 #000, 1.5px 1.5px 1 #000",
+            }}
+          >
+            Riget Zoo Adventures
+          </span>
+        </h1>
         <Row className="py-1">
           <PHContent />
         </Row>

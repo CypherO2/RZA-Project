@@ -6,7 +6,9 @@ function MSA() {
       <Row>
         <Col></Col>
         <Col xs="6">
-          <h1 className="py-4 fw-bold">Modern Slavery Act</h1>
+          <h1 className="py-4 fw-bold" style={{ fontFamily: "cursive" }}>
+            Modern Slavery Act
+          </h1>
 
           <p>
             This statement is published in accordance with the Modern Slavery

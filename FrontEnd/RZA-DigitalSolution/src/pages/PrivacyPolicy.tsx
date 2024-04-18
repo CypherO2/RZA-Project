@@ -7,7 +7,9 @@ export default function PrivacyPolicy() {
         <Row>
           <Col></Col>
           <Col xs="6">
-            <h1 className="py-4 fw-bold">Privacy Policy</h1>
+            <h1 className="py-4 fw-bold" style={{ fontFamily: "cursive" }}>
+              Privacy Policy
+            </h1>
             <p>
               This Privacy Policy describes how [Zoo Name] and [Hotel Name]
               (collectively referred to as "we", "us", or "our") collect, use,
