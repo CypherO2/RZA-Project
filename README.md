@@ -75,7 +75,7 @@ Provide step-by-step instructions on how to get the backend running locally. Inc
 ```bash
 cd PROJ PATH/ BACKEND
 pip install <dependecies>
-python RZAServerEnviroment.py
+python run RZAServerEnviroment.py
 ```
 
 ## Technologies Used
