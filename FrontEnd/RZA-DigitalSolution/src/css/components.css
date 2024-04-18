@@ -58,3 +58,12 @@ iframe {
 .darkened-image {
   filter: brightness(50%);
 }
+h1 {
+  font-family: cursive;
+}
+h2 {
+  font-family: cursive;
+}
+h3 {
+  font-family: cursive;
+}
