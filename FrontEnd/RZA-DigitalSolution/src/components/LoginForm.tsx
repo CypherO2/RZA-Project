@@ -1,18 +1,60 @@
 import {
   MDBBtn,
-  MDBContainer,
   MDBRow,
   MDBCol,
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBCheckbox,
-  MDBIcon,
 } from "mdb-react-ui-kit";
-import { Container } from "react-bootstrap";
-import { SIGNUP_PATH } from "../constants/paths";
+import { INDEX_PATH, SIGNUP_PATH } from "../constants/paths";
+import axios from "axios";
+import { useContext, useState, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import { AccountDetailsContext } from "./accountProvider";
 
 function LoginForm() {
+  const accountDetailsContext = useContext(AccountDetailsContext);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [responseText, setResponseText] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    setResponseText("");
+    if (!username.match(/^[0-9a-zA-Z]+$/)) {
+      setResponseText("Username Not Alphanumeric");
+      return;
+    }
+    if (
+      !password.match(
+        /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9@#$%^_&-+=]+){5,16}$/
+      )
+    )
+      console.log(password);
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+        username: username,
+        password: password,
+      });
+      setResponseText(response.data["message"]);
+      // console.log(response?.data)
+      if (response?.data["success"]) {
+        accountDetailsContext?.setAccountDetails({
+          username,
+          password,
+          role: response?.data["role"],
+        });
+        navigate(INDEX_PATH);
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        setResponseText(error.message);
+      } else {
+        setResponseText(String(error));
+      }
+    }
+  };
   return (
     <div className="">
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -27,10 +69,11 @@ function LoginForm() {
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
-                label="Email address"
+                label="Username"
                 id="formControlLg"
-                type="email"
+                type="username"
                 size="lg"
+                onChange={(e) => setUsername(e.target.value)}
               />
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
@@ -39,6 +82,7 @@ function LoginForm() {
                 id="formControlLg"
                 type="password"
                 size="lg"
+                onChange={(e) => setPassword(e.target.value)}
               />
 
               <p className="small mb-3 pb-lg-2">
@@ -51,6 +95,7 @@ function LoginForm() {
                 className="mx-2 px-5 my-2"
                 color="warning"
                 size="lg"
+                onClick={handleSubmit}
               >
                 Login
               </MDBBtn>
@@ -62,6 +107,9 @@ function LoginForm() {
                     Sign Up
                   </a>
                 </p>
+                {responseText && (
+                  <p className="text-white">Response: {responseText}</p>
+                )}
               </div>
             </MDBCardBody>
           </MDBCard>
