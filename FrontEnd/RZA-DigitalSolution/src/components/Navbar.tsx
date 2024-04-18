@@ -11,10 +11,41 @@ import {
   STORE_PATH,
 } from "../constants/paths";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { BasketContext } from "./BasketProvider";
+import { AccountDetailsContext } from "./accountProvider";
+import { User } from "@carbon/react/icons";
+
+function Log() {
+  const accountDetailsContext = useContext(AccountDetailsContext);
+  if (Object.is(accountDetailsContext?.accountDetails, null)) {
+    return <LoginModal />;
+  } else {
+    return (
+      <Dropdown>
+        <Dropdown.Toggle variant="tertiary" id="dropdown-basic">
+          <User size="40" />
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item disabled>
+            {accountDetailsContext?.accountDetails?.username}
+          </Dropdown.Item>
+          <Dropdown.Item
+            href="/"
+            onClick={() => accountDetailsContext?.setAccountDetails(null)}
+          >
+            <span className="text-danger fw-bold">Sign Out</span>
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+    );
+  }
+}
 
 function NavBar() {
-  // const themeContext = useContext(ThemeContext);
-
+  const basketContext = useContext(BasketContext);
+  console.log();
   return (
     <>
       <Navbar
@@ -39,7 +70,7 @@ function NavBar() {
             />
           </Navbar.Brand>
           <Nav>
-            <LoginModal />
+            <Log />
 
             <Dropdown>
               <Dropdown.Toggle variant="tertiary" id="dropdown-basic">
