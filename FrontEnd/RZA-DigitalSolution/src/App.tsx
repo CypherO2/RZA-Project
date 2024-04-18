@@ -22,7 +22,6 @@ import NavBar from "./components/Navbar";
 import SiteFooter from "./components/SiteFooter";
 import Homepage from "./pages/Home";
 import AboutPage from "./pages/About";
-import ContactPage from "./pages/Contact";
 import StorePage from "./pages/Store";
 import FAQ from "./pages/Faq";
 import RoomPage from "./pages/Rooms";
@@ -42,7 +41,6 @@ function App() {
       <Routes>
         <Route path={INDEX_PATH} element={<Homepage />} />
         <Route path={ABOUT_PATH} element={<AboutPage />} />
-        <Route path={CONTACTS_PATH} element={<ContactPage />} />
         <Route path={STORE_PATH} element={<StorePage />} />
         <Route path={FAQ_PATH} element={<FAQ />} />
         <Route path={ROOM_PATH} element={<RoomPage />} />

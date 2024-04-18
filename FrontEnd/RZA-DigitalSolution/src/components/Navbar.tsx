@@ -48,7 +48,6 @@ function NavBar() {
 
               <Dropdown.Menu>
                 <Dropdown.Item href={ABOUT_PATH}>About Us</Dropdown.Item>
-                <Dropdown.Item href={CONTACTS_PATH}>Contact Us</Dropdown.Item>
                 <Dropdown.Item href={ROOM_PATH}>Rooms</Dropdown.Item>
                 <Dropdown.Item href={STORE_PATH}>Store</Dropdown.Item>
                 <Dropdown.Item href={LEARN_PATH}>RZA Learning</Dropdown.Item>

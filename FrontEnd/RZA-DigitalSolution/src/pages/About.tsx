@@ -154,6 +154,12 @@ function AboutPage() {
               <li>Phone: +3 123 456 789</li>
               <li>Email: info@rigetzooadventures.co.uk</li>
             </ul>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d349152.5284736859!2d-5.3108256010794195!3d53.71877623028436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1711626192004!5m2!1sen!2suk"
+              width="800"
+              height="150"
+              loading="lazy"
+            ></iframe>
           </Col>
           <Col></Col>
         </Row>

@@ -15,14 +15,14 @@ function Homepage() {
         <h1 className="my-4 text-center">
           Welcome to{" "}
           <span
-            className="fw-bold"
+            className="fw-bold fw-italic"
             style={{
               color: "#fa8203",
               textShadow:
                 "-1.5px -1.5px 1 #000, 1.5px -1.5px 1 #000, -1.5px 1.5px 1 #000, 1.5px 1.5px 1 #000",
             }}
           >
-            Riget Zoo Adventures
+            RIGET ZOO
           </span>
         </h1>
         <Row className="py-1">
