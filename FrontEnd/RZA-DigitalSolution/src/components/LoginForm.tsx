@@ -10,6 +10,7 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 import { Container } from "react-bootstrap";
+import { SIGNUP_PATH } from "../constants/paths";
 
 function LoginForm() {
   return (
@@ -57,7 +58,7 @@ function LoginForm() {
               <div>
                 <p className="mb-0">
                   Don't have an account?{" "}
-                  <a href="#!" className="text-white-50 fw-bold">
+                  <a href={SIGNUP_PATH} className="text-white-50 fw-bold">
                     Sign Up
                   </a>
                 </p>

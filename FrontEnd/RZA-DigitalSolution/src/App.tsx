@@ -13,6 +13,7 @@ import {
   MSA_PATH,
   PP_PATH,
   ROOM_PATH,
+  SIGNUP_PATH,
   STAFF_DASHBOARD_PATH,
   STORE_PATH,
   TANDC_PATH,
@@ -33,6 +34,7 @@ import CookiePolicy from "./pages/CookiesPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TsandCs";
 import "./css/components.css";
+import SignupForm from "./components/SignUp";
 
 function App() {
   return (
@@ -51,6 +53,7 @@ function App() {
         <Route path={COOKIE_PATH} element={<CookiePolicy />} />
         <Route path={TANDC_PATH} element={<TermsAndConditions />} />
         <Route path={PP_PATH} element={<PrivacyPolicy />} />
+        <Route path={SIGNUP_PATH} element={<SignupForm/>} />
       </Routes>
       <SiteFooter />
     </>

@@ -15,12 +15,14 @@ const MSA_PATH = "/modern-slavery-act";
 const PP_PATH = "/privacy-policy";
 const COOKIE_PATH = "/cookie-policy";
 const TANDC_PATH = "/ts-and-cs";
+const SIGNUP_PATH = "/signup";
 
 export {
   FAQ_PATH,
   STORE_PATH,
   DASHBOARD_PATH,
   LEARN_PATH,
+  SIGNUP_PATH,
   PP_PATH,
   COOKIE_PATH,
   TANDC_PATH,
