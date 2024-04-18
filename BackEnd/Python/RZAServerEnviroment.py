@@ -4,7 +4,6 @@ import cryptography
 from bcrypt import checkpw, gensalt, hashpw
 import RZAFunctions as LF
 import sqlite3
-from dateutil.parser import parse
 from sqlite3 import Error
 import re
 import datetime
@@ -50,8 +49,8 @@ def LoginDetails():
             results = cu.fetchall()
             print(results)
             for i in results:
-                logins[i[3]] = i[5]
-                role = i[6]
+                logins[i[2]] = i[3]
+                role = i[1]
                 print(role)
                 print(logins)
                 print(logins[username])
@@ -72,21 +71,18 @@ def SignupDetails():
     print("Request Recieved")
     with sqlite3.connect(r"Lorem-Ipsum/Database/RZA-Data.db") as conn:
         print("Connection Established")
-        forename = request.json.get("forename")
-        print(forename)
-        surname = request.json.get("surname")
-        dob = request.json.get("dob")
-        print(dob)
-        if not LF.DateCheck(dob):
-            return jsonify(
-                {
-                    "success": False,
-                    "message": "Value is either not a date or is in the incorrect format (DD/MM/YYYY)",
-                }
-            )
         username = request.json.get("username")
         print(username)
         if LF.UsernameCheck(username):
+            return jsonify(
+                {
+                    "success": False,
+                    "message": "Username must be 5 - 16 characters longs and alphanumeric",
+                }
+            )
+        email = request.json.get("email")
+        print(email)
+        if LF.EmailCheck(email):
             return jsonify(
                 {
                     "success": False,
@@ -121,7 +117,7 @@ def SignupDetails():
                 (forename, surname, username, dob, hashedPassword, CUSTOMER_ROLE),
             )
             conn.commit()
-            return jsonify({"success": True, "message": "Login Successful", "role": 0})
+            return jsonify({"success": True, "message": "Login Successful", "role": 2})
         except Error as e:
             print("Value could not be added to DB", e)
             return jsonify({"success": False, "message": "Internal Server Error"})
@@ -173,11 +169,12 @@ def StaffSignupDetails():
             )
             conn.commit()
             return jsonify(
-                {"success": True, "message": "Staff Account Created", "role": 0}
+                {"success": True, "message": "Staff Account Created", "role": 3}
             )
         except Error as e:
             print("Value could not be added to DB", e)
             return jsonify({"success": False, "message": "Internal Server Error"})
+
 
 if __name__ == "__main__":
     app.run()
