@@ -33,6 +33,7 @@ import MSA from "./pages/ModernSlaveryPage";
 import CookiePolicy from "./pages/CookiesPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TsandCs";
+import "./css/components.css";
 
 function App() {
   return (
