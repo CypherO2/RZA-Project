@@ -6,7 +6,7 @@ interface AccountDetailsType {
   password: String;
   role: Number;
 }
-
+// secondary interface
 export interface AccountDetailsContextType {
   accountDetails: AccountDetailsType;
   setAccountDetails: (accountDetails: AccountDetailsType | null) => void;
@@ -14,6 +14,7 @@ export interface AccountDetailsContextType {
 //interface ^ constants v
 const ACCOUNT_DETAILS_KEY = "account-details";
 //constants ^ function v
+// ensures that the Account Details are used
 function useAccountDetails() {
   const accountDetailsString = sessionStorage.getItem(ACCOUNT_DETAILS_KEY);
   const accountDetailsObject = accountDetailsString
@@ -35,4 +36,5 @@ function useAccountDetails() {
   };
   return { accountDetails, setAccountDetails: saveAccountDetails };
 }
+// exporting Function
 export default useAccountDetails;

@@ -1,3 +1,5 @@
+/* These import statements in the TypeScript React component `StaffSignupForm` are used to bring in
+various functionalities and components from different libraries and files: */
 import { FormEvent, useContext, useEffect, useState } from "react";
 import {
   MDBContainer,
@@ -12,6 +14,7 @@ import { AccountDetailsContext } from "./accountProvider";
 import { useNavigate } from "react-router-dom";
 import { INDEX_PATH } from "../constants/paths";
 function StaffSignupForm() {
+  // Use Effect to set things for the page upon reload / load
   useEffect(() => {
     document.title = "Riget Zoo | Staff Signup";
     console.log(accountDetailsContext?.accountDetails?.role);
@@ -23,6 +26,7 @@ function StaffSignupForm() {
       navigate(INDEX_PATH);
     }
   });
+  // setting constants and using usestate to allow for a robust system
   const accountDetailsContext = useContext(AccountDetailsContext);
   const [showPass, setShowPass] = useState(false);
   const [username, setUsername] = useState("");
@@ -32,6 +36,7 @@ function StaffSignupForm() {
   const [confirmPass, setConfirmPass] = useState("");
   const navigate = useNavigate();
 
+  // handle submit function, is asyncronous, checks username and password, and sett the response text
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setResponseText("");
@@ -53,7 +58,7 @@ function StaffSignupForm() {
       );
       return;
     }
-
+    // Axios Rqst to pull data from the development server
     try {
       const response = await axios.post("http://localhost:5000/staffsignup", {
         username: username,
@@ -79,7 +84,7 @@ function StaffSignupForm() {
       }
     }
   };
-
+  // layout and appearance of the page
   return (
     <>
       <Row>
@@ -173,4 +178,5 @@ function StaffSignupForm() {
     </>
   );
 }
+// exporting of SignUpForm For staff
 export default StaffSignupForm;

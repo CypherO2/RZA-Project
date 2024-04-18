@@ -39,6 +39,7 @@ import AccountProvider from "./components/accountProvider";
 import BasketProvider from "./components/BasketProvider";
 
 function App() {
+  // Providers Wrap around the App so that they can be used Globally
   return (
     <>
       <AccountProvider>

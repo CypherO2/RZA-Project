@@ -14,8 +14,8 @@ import {
 import LoginForm from "./LoginForm";
 
 function LoginModal() {
+  // determines whether the modal is showing at any given time
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (

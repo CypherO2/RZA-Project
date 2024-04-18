@@ -16,6 +16,7 @@ import { BasketContext } from "./BasketProvider";
 import { AccountDetailsContext } from "./accountProvider";
 import { User } from "@carbon/react/icons";
 
+// Conditional Display Function to Ensure the person is loggedout before they can create an account
 function Log() {
   const accountDetailsContext = useContext(AccountDetailsContext);
   if (Object.is(accountDetailsContext?.accountDetails, null)) {

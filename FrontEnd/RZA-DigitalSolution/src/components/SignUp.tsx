@@ -1,5 +1,5 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
-
+// imports
 import {
   MDBContainer,
   MDBRow,
@@ -13,6 +13,7 @@ import { AccountDetailsContext } from "./accountProvider";
 import { useNavigate } from "react-router-dom";
 import { INDEX_PATH } from "../constants/paths";
 function SignupForm() {
+  // sets the assets that need to be loaded immediately on reload/ load
   useEffect(() => {
     document.title = "Riget Zoo | Sign Up";
   });
@@ -25,6 +26,7 @@ function SignupForm() {
   const [confirmPass, setConfirmPass] = useState("");
   const navigate = useNavigate();
 
+  // ensures that the submission is accurate before querying backend
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setResponseText("");
@@ -46,7 +48,7 @@ function SignupForm() {
       );
       return;
     }
-
+// querying backend
     try {
       const response = await axios.post("http://localhost:5000/signup", {
         username: username,
@@ -62,6 +64,7 @@ function SignupForm() {
           password,
           role: response?.data["role"],
         });
+        // forceful redirection
         navigate(INDEX_PATH);
       }
     } catch (error) {

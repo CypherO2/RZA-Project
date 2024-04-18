@@ -12,13 +12,17 @@ import { useContext, useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { AccountDetailsContext } from "./accountProvider";
 
+// Form for Logging in
 function LoginForm() {
+  // determines if the person if logged in
   const accountDetailsContext = useContext(AccountDetailsContext);
+  // username and password + response text and force re-nav is stored here
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [responseText, setResponseText] = useState("");
   const navigate = useNavigate();
 
+  //ensures info is ok to query the development environment
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setResponseText("");
@@ -32,6 +36,7 @@ function LoginForm() {
       )
     )
       console.log(password);
+      // query dev environment
     try {
       const response = await axios.post("http://localhost:5000/login", {
         username: username,

@@ -12,4 +12,5 @@ function useUsername() {
   };
   return { username, setUsername: saveUsername };
 }
+// exporting function
 export default useUsername;

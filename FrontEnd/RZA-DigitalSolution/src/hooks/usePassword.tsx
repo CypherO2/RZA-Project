@@ -12,4 +12,5 @@ function usePassword() {
   };
   return { password, setPassword: savePassword };
 }
+// exporting function
 export default usePassword;
