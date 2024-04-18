@@ -16,6 +16,12 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 # login
+# The `@app.route("/login", methods=["POST"])` decorator in the Flask application is defining a route
+# for handling POST requests to the "/login" endpoint. When a POST request is made to this endpoint,
+# the `LoginDetails()` function is executed to process the request and handle the login functionality.
+# This function retrieves the username and password from the request, validates them, checks if the
+# user exists in the database, and verifies the password. Finally, it returns a JSON response
+# indicating the success or failure of the login attempt.
 @app.route("/login", methods=["POST"])
 def LoginDetails():
     logins = {}
@@ -67,6 +73,10 @@ def LoginDetails():
 
 
 # sign up - customer
+# The `@app.route("/signup", methods=["POST"])` decorator in the Flask application is defining a route
+# for handling POST requests to create a new customer account. When a POST request is made to the
+# "/signup" endpoint, the `SignupDetails()` function is executed to process the request and handle the
+# creation of a new customer account in the database.
 @app.route("/signup", methods=["POST"])
 def SignupDetails():
     print("Request Recieved")
@@ -124,6 +134,10 @@ def SignupDetails():
             return jsonify({"success": False, "message": "Internal Server Error"})
 
 
+# The `@app.route("/staffsignup", methods=["POST"])` decorator in the Flask application is defining a
+# route for handling POST requests to create a new staff account. When a POST request is made to the
+# "/staffsignup" endpoint, the `StaffSignupDetails()` function is executed to process the request and
+# handle the creation of a new staff account in the database.
 @app.route("/staffsignup", methods=["POST"])
 def StaffSignupDetails():
     print("Request Recieved")
