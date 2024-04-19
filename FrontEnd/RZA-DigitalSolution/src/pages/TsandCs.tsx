@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 export default function TermsAndConditions() {
+    useEffect(() => {
+      document.title = "Riget Zoo | Terms and Conditions";
+    });
   return (
     <Container className="my-3">
       <Row>

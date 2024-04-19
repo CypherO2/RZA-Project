@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default function PrivacyPolicy() {
+    useEffect(() => {
+      document.title = "Riget Zoo | Privacy Policy";
+    });
   return (
     <>
       <Container className="my-3">

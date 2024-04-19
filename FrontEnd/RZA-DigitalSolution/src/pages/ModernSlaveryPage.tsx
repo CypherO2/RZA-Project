@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 function MSA() {
+    useEffect(() => {
+      document.title = "Riget Zoo | Modern Slavery Act";
+    });
   return (
     <Container className="my-3">
       <Row>

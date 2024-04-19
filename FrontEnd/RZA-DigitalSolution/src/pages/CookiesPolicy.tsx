@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 function CookiePolicy() {
+    useEffect(() => {
+      document.title = "Riget Zoo | Cookie Policy";
+    });
   return (
     <>
       <Container className="my-3">
