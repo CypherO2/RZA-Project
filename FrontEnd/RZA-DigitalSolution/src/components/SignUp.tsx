@@ -66,6 +66,7 @@ function SignupForm() {
         accountDetailsContext?.setAccountDetails({
           username,
           password,
+          membership: response?.data["membership"],
           role: response?.data["role"],
         });
         // forceful redirection

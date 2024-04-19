@@ -77,6 +77,7 @@ function StaffSignupForm() {
         accountDetailsContext?.setAccountDetails({
           username,
           password,
+          membership: response?.data["membership"],
           role: response?.data["role"],
         });
         navigate(INDEX_PATH);
