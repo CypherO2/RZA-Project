@@ -19,8 +19,7 @@ import Room4 from "../assets/Room4.png";
 import Room4v2 from "../assets/Room4v2.png";
 import Room5 from "../assets/room5.png";
 import Room5v2 from "../assets/Room5v2.png";
-
-
+import { BOOKING_PATH } from "../constants/paths";
 
 export default function RoomCards() {
   const basketContext = useContext(BasketContext);
@@ -54,6 +53,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £258/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -93,6 +93,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £262.33/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -130,6 +131,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £258/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -169,6 +171,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £262.33/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -208,6 +211,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £312.50/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -247,6 +251,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £319/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -286,6 +291,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £267.67/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -325,6 +331,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £272.33/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -362,6 +369,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £156.50/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
@@ -401,6 +409,7 @@ export default function RoomCards() {
                   <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
                     £163.50/ Night
                     <Button
+                      href={BOOKING_PATH}
                       style={{ color: "#fa8203" }}
                       className="text-light fw-bold px-4 mx-4"
                       onClick={() =>
