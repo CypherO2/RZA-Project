@@ -11,7 +11,7 @@ function Homepage() {
   return (
     <>
       <HomeCarousel />
-      <Container>
+      <Container >
         <h1 className="my-4 text-center">
           Welcome to{" "}
           <span
