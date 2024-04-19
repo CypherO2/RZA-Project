@@ -16,6 +16,7 @@ const PP_PATH = "/privacy-policy";
 const COOKIE_PATH = "/cookie-policy";
 const TANDC_PATH = "/ts-and-cs";
 const SIGNUP_PATH = "/signup";
+const BOOKING_PATH = "/ukesbf7JHBS8w98u";
 
 export {
   FAQ_PATH,
@@ -25,6 +26,7 @@ export {
   SIGNUP_PATH,
   PP_PATH,
   COOKIE_PATH,
+  BOOKING_PATH,
   TANDC_PATH,
   CHECKOUT_PATH,
   MSA_PATH,
