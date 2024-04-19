@@ -93,11 +93,31 @@ List the main technologies/frameworks/libraries used in the project.
 
 ## Dependencies
 
-- [React Bootstrap](https://react-bootstrap.netlify.app/)
-- [Github Primer](https://primer.style/)
-- [MDBootstrap](https://mdbootstrap.com/docs/react/)
+### Regular Dependencies
 
-List project dependencies for a User & Developer
+- [React Bootstrap v2.10.2](https://react-bootstrap.netlify.app/)
+- [Fontawesome v6.5.1](https://fontawesome.com/)
+- [Axios v1.6.8](https://axios-http.com/docs/intro)
+- [Carbon Components v10.58.12](https://carbondesignsystem.com/)
+- [Carbon Components React v8.53.1](https://carbondesignsystem.com/)
+- [Carbon Icons v7.0.7](https://carbondesignsystem.com/)
+- [MDB React UI Kit v7.2.0](https://mdbootstrap.com/docs/react/)
+- [React v18.2.0](https://legacy.reactjs.org/)
+- [React DOM v18.2.0](https://legacy.reactjs.org/docs/react-dom.html)
+- [React Router DOM v6.22.3](https://www.npmjs.com/package/react-router-dom)
+
+### Developer Dependencies
+
+- [@Types/React v18.2.66](https://www.npmjs.com/package/@types/react)
+- [@Types/React-DOM v18.2.22](https://www.npmjs.com/package/@types/react-dom)
+- [@TypeScript-eslint/eslint-plugin v7.2.0](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
+- [@TypeScript-eslint/Parser v7.2.0](https://www.npmjs.com/package/@typescript-eslint/parser)
+- [@ViteJS/Plugin-React v4.2.1](https://www.npmjs.com/package/@vitejs/plugin-react)
+- [Eslint v8.57.0](https://www.npmjs.com/package/eslint)
+- [Eslint-plugin-react-hooks v4.6.0](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+- [Eslint-plugin-react-refresh v0.4.6](https://www.npmjs.com/package/eslint-plugin-react-refresh)
+- [TypeScript v5.2.2](https://www.typescriptlang.org/)
+- [Vite v5.2.0](https://vitejs.dev/)
 
 ## Contributers
 
