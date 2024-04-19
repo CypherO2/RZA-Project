@@ -13,6 +13,11 @@ import {
   MDBRow,
 } from "mdb-react-ui-kit";
 
+/* The `export default function Basket() {` statement is defining a functional component named `Basket`
+that is being exported as the default export from this module. This component represents a section
+of a web page related to the checkout and payment process. It includes JSX elements for displaying
+saved cards, adding new cards, and a button for adding a new card. The component also sets the
+document title to "Riget Zoo | Basket" using the `useEffect` hook. */
 export default function Basket() {
   useEffect(() => {
     document.title = "Riget Zoo | Basket";
