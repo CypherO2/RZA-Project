@@ -12,6 +12,7 @@ import {
   INDEX_PATH,
   LEARN_PATH,
   MSA_PATH,
+  NOT_FOUND_PATH,
   PP_PATH,
   ROOM_PATH,
   SIGNUP_PATH,
@@ -39,6 +40,7 @@ import SignupForm from "./components/SignUp";
 import AccountProvider from "./components/accountProvider";
 import BasketProvider from "./components/BasketProvider";
 import Checkout from "./pages/Basket";
+import Error from "./pages/NotFound";
 
 function App() {
   // Providers Wrap around the App so that they can be used Globally
@@ -53,6 +55,7 @@ function App() {
             <Route path={STORE_PATH} element={<StorePage />} />
             <Route path={FAQ_PATH} element={<FAQ />} />
             <Route path={ROOM_PATH} element={<RoomPage />} />
+            <Route path={NOT_FOUND_PATH} element={<Error />} />
             <Route path={LEARN_PATH} element={<LearningPage />} />
             <Route path={DASHBOARD_PATH} element={<DashboardPage />} />
             <Route path={STAFF_DASHBOARD_PATH} element={<StaffDashboard />} />

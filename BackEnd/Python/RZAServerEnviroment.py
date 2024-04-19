@@ -37,7 +37,7 @@ def LoginDetails():
                 }
             )
         password = request.json.get("password")
-        print(password)
+
         if LF.PasswordCheck(password):
             password = password.encode("utf-8")
         else:
@@ -53,17 +53,26 @@ def LoginDetails():
             query = """Select * From Users Where Users.Username = ?"""
             cu.execute(query, (username,))
             results = cu.fetchall()
-            print(results)
+
             for i in results:
-                print(i)
                 logins[i[2]] = i[3]
                 role = i[1]
-                print(role)
-                print(logins)
-                print(logins[username])
+                AcceptedMembershipValues = [1, 2, 3, 4]
+                membershipID = i[5]
+                if membershipID in AcceptedMembershipValues:
+                    spare_query = """SELECT MembershipType FROM MembershipType WHERE MTypeID = ?"""
+                    cu.execute(spare_query, (membershipID,))
+                    QueryResults = cu.fetchall()
+                    membership = QueryResults
+
             if checkpw(password, logins[username]):
                 return jsonify(
-                    {"success": True, "message": "Login Successful", "role": role}
+                    {
+                        "success": True,
+                        "message": "Login Successful",
+                        "role": role,
+                        "membership": membership,
+                    }
                 )
             else:
                 return jsonify({"success": False, "message": "Incorrect Login Details"})

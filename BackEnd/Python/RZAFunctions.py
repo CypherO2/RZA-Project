@@ -15,6 +15,7 @@ from dateutil.parser import parse
 
 # Functions
 
+
 # Checks that the password meets the passing parametres before being allowing anyone to signup/ Login
 def PasswordCheck(password):
     passwordPattern = (
@@ -25,19 +26,20 @@ def PasswordCheck(password):
     else:
         return False
 
+
 # Checks that the username meets the passing parametres before being allowing anyone to signup/ Login
 def UsernameCheck(username):
     if len(username) < 5:
-        print(len(username))
+
         return True
     elif len(username) > 16:
-        print(len(username))
+
         return True
     elif not username.isalnum():
-        print(len(username))
+
         return True
     else:
-        print(len(username))
+
         return False
 
 
@@ -59,6 +61,7 @@ def UsernameCheck(username):
 #             return False
 #     else:
 #         return False
+
 
 # Checks that the email meets the passing parametres before being allowing anyone to signup/ Login
 def EmailCheck(email):
