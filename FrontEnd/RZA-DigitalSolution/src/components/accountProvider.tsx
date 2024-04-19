@@ -14,7 +14,7 @@ function AccountProvider({ children }: { children: ReactNode }) {
   const accountDetailsContext = useAccountDetails();
 
   return (
-    // details how the Provider should wrapp around the App
+    // details how the Provider should wrap around the App
     <AccountDetailsContext.Provider value={accountDetailsContext}>
       {children}
     </AccountDetailsContext.Provider>
