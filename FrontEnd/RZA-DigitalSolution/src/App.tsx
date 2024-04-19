@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   ABOUT_PATH,
+  CHECKOUT_PATH,
   CONTACTS_PATH,
   COOKIE_PATH,
   DASHBOARD_PATH,
@@ -37,6 +38,7 @@ import "./css/components.css";
 import SignupForm from "./components/SignUp";
 import AccountProvider from "./components/accountProvider";
 import BasketProvider from "./components/BasketProvider";
+import Checkout from "./pages/Basket";
 
 function App() {
   // Providers Wrap around the App so that they can be used Globally
@@ -59,6 +61,7 @@ function App() {
             <Route path={TANDC_PATH} element={<TermsAndConditions />} />
             <Route path={PP_PATH} element={<PrivacyPolicy />} />
             <Route path={SIGNUP_PATH} element={<SignupForm />} />
+            <Route path={CHECKOUT_PATH} element={<Checkout />} />
           </Routes>
           <SiteFooter />
         </BasketProvider>

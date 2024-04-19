@@ -4,6 +4,7 @@ import LoginModal from "./LoginModal";
 import { Menu, Home } from "@carbon/react/icons";
 import {
   ABOUT_PATH,
+  CHECKOUT_PATH,
   CONTACTS_PATH,
   FAQ_PATH,
   LEARN_PATH,
@@ -34,6 +35,7 @@ function Log() {
           <Dropdown.Item disabled>
             {accountDetailsContext?.accountDetails?.username}
           </Dropdown.Item>
+          <Dropdown.Item href={CHECKOUT_PATH}>Basket</Dropdown.Item>
           <Dropdown.Item
             href="/"
             onClick={() => accountDetailsContext?.setAccountDetails(null)}
