@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap";
+import AhAhAh from "../assets/AhAhAh.gif";
 
 export default function Basket() {
   return (
@@ -11,11 +12,17 @@ export default function Basket() {
         <h2 className="text-secondary">
           We apologise for any inconnvience this may cause you.
         </h2>
-        <h4 style={{ fontFamily: "cursive" }}>
+        <h4 className="pb-3" style={{ fontFamily: "cursive" }}>
           <span style={{ color: "fa8203" }}>
             - The Riget Zoo Adventure Team
           </span>
         </h4>
+        <img
+          className="center-block my-4"
+          src={AhAhAh}
+          alt="This Page is Unavaliable Right Now!"
+          style={{ height: "20rem" }}
+        />
       </Container>
     </>
   );

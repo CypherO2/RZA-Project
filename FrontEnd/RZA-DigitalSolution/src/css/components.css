@@ -67,3 +67,8 @@ h2 {
 h3 {
   font-family: cursive;
 }
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }

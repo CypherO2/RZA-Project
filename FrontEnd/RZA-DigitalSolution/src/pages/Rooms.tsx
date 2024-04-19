@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Container } from "react-bootstrap";
+import RoomCards from "../components/RoomCards";
 
 export default function RoomPage() {
   useEffect(() => {
@@ -7,7 +8,9 @@ export default function RoomPage() {
   });
   return (
     <>
-      <Container></Container>
+      <Container>
+        <RoomCards />
+      </Container>
     </>
   );
 }
