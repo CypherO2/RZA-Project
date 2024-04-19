@@ -24,6 +24,7 @@ function LoginForm() {
   // username and password + response text and force re-nav is stored here
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // const [membership, setMembership] = useState("");
   const [responseText, setResponseText] = useState("");
   const navigate = useNavigate();
 
@@ -44,7 +45,7 @@ function LoginForm() {
       )
     )
       console.log(password);
-      // query dev environment
+    // query dev environment
     try {
       const response = await axios.post("http://localhost:5000/login", {
         username: username,
@@ -56,6 +57,7 @@ function LoginForm() {
         accountDetailsContext?.setAccountDetails({
           username,
           password,
+          membership: response?.data["membership"],
           role: response?.data["role"],
         });
         navigate(INDEX_PATH);

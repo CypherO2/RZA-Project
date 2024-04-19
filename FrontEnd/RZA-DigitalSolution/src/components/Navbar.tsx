@@ -33,7 +33,16 @@ function Log() {
 
         <Dropdown.Menu>
           <Dropdown.Item disabled>
-            {accountDetailsContext?.accountDetails?.username}
+            Username:{" "}
+            <span className="fw-bold">
+              {accountDetailsContext?.accountDetails?.username}
+            </span>
+          </Dropdown.Item>
+          <Dropdown.Item disabled>
+            Membership:{" "}
+            <span className="fw-bold text-success">
+              {accountDetailsContext?.accountDetails?.membership}
+            </span>
           </Dropdown.Item>
           <Dropdown.Item href={CHECKOUT_PATH}>Basket</Dropdown.Item>
           <Dropdown.Item

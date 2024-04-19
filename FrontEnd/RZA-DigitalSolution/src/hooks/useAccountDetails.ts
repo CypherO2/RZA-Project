@@ -4,6 +4,7 @@ import { useState } from "react";
 interface AccountDetailsType {
   username: String;
   password: String;
+  membership: String;
   role: Number;
 }
 // secondary interface
