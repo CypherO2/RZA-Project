@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   ABOUT_PATH,
+  BOOKING_PATH,
   CHECKOUT_PATH,
   CONTACTS_PATH,
   COOKIE_PATH,
@@ -41,6 +42,7 @@ import AccountProvider from "./components/accountProvider";
 import BasketProvider from "./components/BasketProvider";
 import Checkout from "./pages/Basket";
 import Error from "./pages/NotFound";
+import Booking from "./pages/Booking";
 
 function App() {
   // Providers Wrap around the App so that they can be used Globally
@@ -65,6 +67,7 @@ function App() {
             <Route path={PP_PATH} element={<PrivacyPolicy />} />
             <Route path={SIGNUP_PATH} element={<SignupForm />} />
             <Route path={CHECKOUT_PATH} element={<Checkout />} />
+            <Route path={BOOKING_PATH} element={<Booking />} />
           </Routes>
           <SiteFooter />
         </BasketProvider>
