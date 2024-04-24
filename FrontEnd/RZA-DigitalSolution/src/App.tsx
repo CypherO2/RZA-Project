@@ -44,6 +44,11 @@ import Checkout from "./pages/Basket";
 import Error from "./pages/NotFound";
 import Booking from "./pages/Booking";
 
+/* The `function App() {` is defining a functional component named `App`. This component is the root
+component of the application and it returns the structure of the application by rendering different
+routes based on the paths defined in the imported constants. The component also wraps the `NavBar`,
+`SiteFooter`, and various other components with providers like `AccountProvider` and
+`BasketProvider` to make their functionality available globally within the application. */
 function App() {
   // Providers Wrap around the App so that they can be used Globally
   return (

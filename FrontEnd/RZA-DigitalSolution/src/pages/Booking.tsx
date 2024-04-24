@@ -12,6 +12,10 @@ function List() {
   );
 }
 
+/* The `export default function Booking() {` statement is exporting a default function component named
+`Booking`. This component represents a booking form for a zoo, containing fields for the user's full
+name, contact details, address, and country selection dropdown. The component also sets the document
+title to "Riget Zoo | Booking Form" using the `useEffect` hook. */
 export default function Booking() {
   useEffect(() => {
     document.title = "Riget Zoo | Booking Form";

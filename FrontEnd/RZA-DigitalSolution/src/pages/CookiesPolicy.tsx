@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
+/* The `CookiePolicy` function is a React functional component that represents the Cookie Policy page
+of a website. Inside the component, there is a `useEffect` hook that sets the document title to
+"Riget Zoo | Cookie Policy" when the component mounts. */
 function CookiePolicy() {
     useEffect(() => {
       document.title = "Riget Zoo | Cookie Policy";

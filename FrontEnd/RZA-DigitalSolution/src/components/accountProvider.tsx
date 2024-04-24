@@ -10,6 +10,10 @@ export const AccountDetailsContext =
   createContext<AccountDetailsContextType | null>(null);
 
 // Function to create Provider
+/* The `function AccountProvider` is creating a provider component in React that utilizes the
+`AccountDetailsContext` context. This provider component is responsible for wrapping its children
+components with the context provider, allowing the data stored in the context to be accessed by any
+descendant components that are part of the context consumer. */
 function AccountProvider({ children }: { children: ReactNode }) {
   const accountDetailsContext = useAccountDetails();
 

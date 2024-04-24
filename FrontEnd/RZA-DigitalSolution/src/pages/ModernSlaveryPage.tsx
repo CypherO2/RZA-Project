@@ -1,6 +1,13 @@
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
+/* The `function MSA() {` is defining a functional component in React. This component is responsible
+for rendering the content related to the Modern Slavery Act on a web page. Within this component,
+various headings, paragraphs, and lists are structured to provide information about the
+organization's commitment, policies, areas of risk, due diligence, employee measures, supply chain
+management, conservation partners, training, and future actions regarding modern slavery. The
+`useEffect` hook is used to set the document title to "Riget Zoo | Modern Slavery Act" when the
+component is mounted. */
 function MSA() {
     useEffect(() => {
       document.title = "Riget Zoo | Modern Slavery Act";

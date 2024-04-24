@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import LearningResources from "../components/ResourcesCards";
 
+/* The `LearningPage` function is a React functional component that represents a page in a React
+application. Within this function, the `useEffect` hook is used to set the document title to "Riget
+Zoo | Learner Resources" when the component mounts. */
 function LearningPage() {
   useEffect(() => {
     document.title = "Riget Zoo | Learner Resources";

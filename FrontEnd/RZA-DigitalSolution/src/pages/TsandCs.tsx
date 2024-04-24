@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
+/* The `export default function TermsAndConditions() {` statement is defining a default function named
+`TermsAndConditions` that will be exported from this module. This function represents the component
+for displaying the Terms and Conditions page in a React application. By exporting it as the default
+export, other modules can import and use this component. */
 export default function TermsAndConditions() {
     useEffect(() => {
       document.title = "Riget Zoo | Terms and Conditions";

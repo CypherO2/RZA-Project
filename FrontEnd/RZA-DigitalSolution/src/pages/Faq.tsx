@@ -3,6 +3,10 @@ import { Container, Row } from "react-bootstrap";
 import FAQCard from "../components/FAQCard";
 import { Query } from "@carbon/react/icons";
 
+/* The `function FAQ() {` is defining a functional component named `FAQ`. This component is responsible
+for rendering a FAQ page that displays frequently asked questions using `FAQCard` components. Inside
+the component, there is a `useEffect` hook that sets the document title to "Riget Zoo | FAQ" when
+the component mounts. */
 function FAQ() {
   useEffect(() => {
     document.title = "Riget Zoo | FAQ";

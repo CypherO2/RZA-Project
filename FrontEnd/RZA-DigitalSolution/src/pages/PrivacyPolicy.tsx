@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
+/* The `export default function PrivacyPolicy() {` statement is defining a default export of a
+functional component named `PrivacyPolicy`. This component represents the Privacy Policy page of a
+website. It uses the `useEffect` hook to set the document title to "Riget Zoo | Privacy Policy" when
+the component is mounted. */
 export default function PrivacyPolicy() {
     useEffect(() => {
       document.title = "Riget Zoo | Privacy Policy";
