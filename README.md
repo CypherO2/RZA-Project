@@ -1,7 +1,7 @@
 # RZA - Task 2; Development of a Web Appliction
 
 > [!IMPORTANT]  
-> The comments throughout this code are AI assisted utilising the VSCode Extension "Mintlyfiy Doc Writer".
+> The comments throughout this code are AI assisted utilising the VSCode Extension "[Mintlyfiy Doc Writer](https://writer.mintlify.com/)".
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
