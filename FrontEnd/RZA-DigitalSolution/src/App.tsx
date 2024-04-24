@@ -15,6 +15,7 @@ import {
   MSA_PATH,
   NOT_FOUND_PATH,
   PP_PATH,
+  PROFILE_PATH,
   ROOM_PATH,
   SIGNUP_PATH,
   STAFF_DASHBOARD_PATH,
@@ -43,6 +44,8 @@ import BasketProvider from "./components/BasketProvider";
 import Checkout from "./pages/Basket";
 import Error from "./pages/NotFound";
 import Booking from "./pages/Booking";
+import ProfileCards from "./pages/Profile";
+import Profile from "./pages/Profile";
 
 /* The `function App() {` is defining a functional component named `App`. This component is the root
 component of the application and it returns the structure of the application by rendering different
@@ -62,7 +65,6 @@ function App() {
             <Route path={STORE_PATH} element={<StorePage />} />
             <Route path={FAQ_PATH} element={<FAQ />} />
             <Route path={ROOM_PATH} element={<RoomPage />} />
-            <Route path={NOT_FOUND_PATH} element={<Error />} />
             <Route path={LEARN_PATH} element={<LearningPage />} />
             <Route path={DASHBOARD_PATH} element={<DashboardPage />} />
             <Route path={STAFF_DASHBOARD_PATH} element={<StaffDashboard />} />
@@ -73,6 +75,8 @@ function App() {
             <Route path={SIGNUP_PATH} element={<SignupForm />} />
             <Route path={CHECKOUT_PATH} element={<Checkout />} />
             <Route path={BOOKING_PATH} element={<Booking />} />
+            <Route path={NOT_FOUND_PATH} element={<Error />} />
+            <Route path={PROFILE_PATH} element={<Profile />} />
           </Routes>
           <SiteFooter />
         </BasketProvider>

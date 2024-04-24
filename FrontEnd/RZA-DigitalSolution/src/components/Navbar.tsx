@@ -8,6 +8,7 @@ import {
   CONTACTS_PATH,
   FAQ_PATH,
   LEARN_PATH,
+  PROFILE_PATH,
   ROOM_PATH,
   STORE_PATH,
 } from "../constants/paths";
@@ -32,13 +33,13 @@ function Log() {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item disabled>
+          <Dropdown.Item href={PROFILE_PATH}>
             Username:{" "}
             <span className="fw-bold">
               {accountDetailsContext?.accountDetails?.username}
             </span>
           </Dropdown.Item>
-          <Dropdown.Item disabled>
+          <Dropdown.Item href={PROFILE_PATH}>
             Membership:{" "}
             <span className="fw-bold text-success">
               {accountDetailsContext?.accountDetails?.membership}
