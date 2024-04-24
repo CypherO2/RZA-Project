@@ -57,6 +57,7 @@ def LoginDetails():
             for i in results:
                 logins[i[2]] = i[3]
                 role = i[1]
+                loyalty_points = i[6]
                 AcceptedMembershipValues = [1, 2, 3, 4]
                 membershipID = i[5]
                 if membershipID in AcceptedMembershipValues:
@@ -64,7 +65,8 @@ def LoginDetails():
                     cu.execute(spare_query, (membershipID,))
                     QueryResults = cu.fetchall()
                     membership = QueryResults
-
+                else:
+                    membership = "None"
             if checkpw(password, logins[username]):
                 return jsonify(
                     {
@@ -72,6 +74,7 @@ def LoginDetails():
                         "message": "Login Successful",
                         "role": role,
                         "membership": membership,
+                        "points": loyalty_points,
                     }
                 )
             else:
@@ -130,14 +133,24 @@ def SignupDetails():
         salt = gensalt()
         hashedPassword = hashpw(password, salt)
         try:
-            statement = """INSERT INTO Users(UTypeID, Username, Password, Email) VALUES(?,?,?,?)"""
+            statement = """INSERT INTO Users(UTypeID, Username, Password, Email, LPoints) VALUES(?,?,?,?,?)"""
             CUSTOMER_ROLE = 2
+            DEFAULT_LPOINTS = 0
+            DEFAULT_MEMBERSHIP = 0
             cu.execute(
                 statement,
-                (CUSTOMER_ROLE, username, hashedPassword, email),
+                (CUSTOMER_ROLE, username, hashedPassword, email, DEFAULT_LPOINTS),
             )
             conn.commit()
-            return jsonify({"success": True, "message": "Login Successful", "role": 2})
+            return jsonify(
+                {
+                    "success": True,
+                    "message": "Login Successful",
+                    "role": CUSTOMER_ROLE,
+                    "membership": "None",
+                    "points": DEFAULT_LPOINTS,
+                }
+            )
         except Error as e:
             print("Value could not be added to DB", e)
             return jsonify({"success": False, "message": "Internal Server Error"})
@@ -185,15 +198,28 @@ def StaffSignupDetails():
         salt = gensalt()
         hashedPassword = hashpw(password, salt)
         try:
-            statement = """INSERT INTO Users(UTypeID, Username, Password, Email) VALUES(?,?,?,?)"""
+            statement = """INSERT INTO Users(UTypeID, Username, Password, Email, LPoints) VALUES(?,?,?,?,?)"""
             STAFF_DEFAULT_ROLE = 4
+            STAFF_DEFAULT_LPOINTS = 0
             cu.execute(
                 statement,
-                (STAFF_DEFAULT_ROLE, username, hashedPassword, email),
+                (
+                    STAFF_DEFAULT_ROLE,
+                    username,
+                    hashedPassword,
+                    email,
+                    STAFF_DEFAULT_LPOINTS,
+                ),
             )
             conn.commit()
             return jsonify(
-                {"success": True, "message": "Staff Account Created", "role": 3}
+                {
+                    "success": True,
+                    "message": "Staff Account Created",
+                    "role": STAFF_DEFAULT_ROLE,
+                    "membership": "None",
+                    "points": STAFF_DEFAULT_LPOINTS,
+                }
             )
         except Error as e:
             print("Value could not be added to DB", e)

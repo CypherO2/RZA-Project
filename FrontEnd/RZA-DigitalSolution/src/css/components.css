@@ -14,10 +14,6 @@
 .opacity-reset {
   opacity: 100%;
 }
-.image-responsive {
-  width: 90%;
-  height: auto;
-}
 .rounded-corners-light {
   border-radius: 10px;
   background-color: rgb(245, 245, 245);
