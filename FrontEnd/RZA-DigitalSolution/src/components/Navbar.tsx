@@ -12,7 +12,6 @@ import {
   ROOM_PATH,
   STORE_PATH,
 } from "../constants/paths";
-import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { BasketContext } from "./BasketProvider";
 import { AccountDetailsContext } from "./accountProvider";
