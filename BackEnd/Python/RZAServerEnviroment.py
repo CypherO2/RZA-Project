@@ -7,6 +7,7 @@ import sqlite3
 from sqlite3 import Error
 import re
 import datetime
+import random
 
 # app = Flask function - name as variable fed into function
 app = Flask(__name__)
@@ -224,6 +225,51 @@ def StaffSignupDetails():
         except Error as e:
             print("Value could not be added to DB", e)
             return jsonify({"success": False, "message": "Internal Server Error"})
+
+
+@app.route("/reserve", methods=["POST"])
+def reserve():
+    print("Request Recieved")
+    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
+        print("Connection Established")
+    reservationName = request.json.get("reservationName")
+    print(reservationName)
+    check_in_date = request.json.get("checkin")
+    if not LF.DateCheck(check_in_date):
+        return jsonify({"success": False, "message": "Check In is NOT a valid Date"})
+    check_out_date = request.json.get("checkout")
+    if not LF.IsDate(check_out_date):
+        return jsonify({"success": False, "message": "Check Out is NOT a valid Date"})
+    print("Check In Date:", check_in_date, "\nCheck Out Date:", check_out_date)
+    try:
+        cu = conn.cursor()
+        print("Cursor Created")
+        try:
+            query = """SELECT RoomID FROM Rooms WHERE Avaliable = 1"""
+            cu.execute(query)
+            AvaliableRooms = cu.fetchall()
+            print("Available Rooms:", AvaliableRooms)
+            Rooms = []
+            for RoomID in AvaliableRooms:
+                print("RoomID:", RoomID[0])
+                Rooms.append(RoomID[0])
+            chosen_room = random.choice(Rooms)
+            print("Chosen Room:", chosen_room)
+            try:
+                update = """UPDATE Rooms SET"""
+
+                try:
+                    insert = """INSERT INTO RoomBookings"""
+                except:
+                    print("An error has occurred when inserting into the table")
+            except:
+                print("An Error Occurred Updating the Rooms Record")
+
+        except:
+            print("Error has occurred in room avaliablity")
+
+    except:
+        print("Error > > > Could Not Create Cursor @ Reservation")
 
 
 if __name__ == "__main__":

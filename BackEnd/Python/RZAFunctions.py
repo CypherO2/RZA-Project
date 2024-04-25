@@ -15,10 +15,11 @@ from dateutil.parser import parse
 
 # Functions
 
+
 def PasswordCheck(password):
     """
     This function is likely designed to check the strength or validity of a given password.
-    
+
     :param password: A string representing the password that needs to be checked for validity
     """
     passwordPattern = (
@@ -29,10 +30,11 @@ def PasswordCheck(password):
     else:
         return False
 
+
 def UsernameCheck(username):
     """
     This function is likely designed to check the validity or format of a given username.
-    
+
     :param username: It seems like you were about to define a function called `UsernameCheck` that takes
     a parameter `username`. If you need help with completing the function or have any specific
     requirements, feel free to provide more details so I can assist you further
@@ -50,10 +52,31 @@ def UsernameCheck(username):
 
         return False
 
+
+def IsDate(date, fuzzy=False):
+    try:
+        parse(date, fuzzy=fuzzy)
+        return True
+    except ValueError:
+        return False
+
+
+def DateCheck(date):
+    if IsDate(date, fuzzy=False):
+        date_format = "%Y-%m-%d"
+        try:
+            dateObject = datetime.datetime.strptime(date, date_format)
+            return True
+        except:
+            return False
+    else:
+        return False
+
+
 def EmailCheck(email):
     """
     This function is likely designed to check the validity of an email address.
-    
+
     :param email: A string representing an email address that you want to check for validity
     """
     regex = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b"
