@@ -134,12 +134,32 @@ export default function BookingForm() {
                     onChange={(e) => setCheckOutDate(e.target.value)}
                   />
                 </Col>
+                <Col>
+                  <Form.Label className="pt-2">Room type</Form.Label>
+                  <Form.Select>
+                    <option>Select a Room</option>
+                    <option>Single Room | 1 Bed</option>
+                    <option>Single Room | 2 Beds</option>
+                    <option>Double Room</option>
+                    <option>King Room</option>
+                    <option>Queen Room</option>
+                  </Form.Select>
+                </Col>
               </Row>
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
             </Form.Group>
-            <Button type="submit">Submit</Button>
+            <Row>
+              <Col></Col>
+              <Col></Col>
+              <Col xs={2}>
+                <Button
+                  type="submit"
+                  className="d-flex text-dark mt-3 px-5"
+                  variant="outline-success"
+                >
+                  Submit
+                </Button>
+              </Col>
+            </Row>
           </Form>
         </div>
       </Container>
