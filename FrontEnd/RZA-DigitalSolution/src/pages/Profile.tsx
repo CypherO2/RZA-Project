@@ -71,7 +71,7 @@ export default function Profile() {
   const navigate = useNavigate();
   const accountDetailsContext = useContext(AccountDetailsContext);
   return (
-    <div className="" style={{ backgroundColor: "#eee", height:"35vw" }}>
+    <div className="" style={{ backgroundColor: "#eee", height: "35vw" }}>
       <MDBContainer className="container py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol md="12" xl="4">
@@ -83,6 +83,7 @@ export default function Profile() {
                     className="rounded-circle"
                     fluid
                     style={{ width: "100px" }}
+                    alt="The Default Profile Picture of a Profile (not changeable yet)"
                   />
                 </div>
                 <MDBTypography tag="h4">

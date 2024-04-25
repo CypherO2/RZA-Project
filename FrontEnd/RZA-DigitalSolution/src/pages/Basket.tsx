@@ -38,6 +38,7 @@ export default function Basket() {
                   <img
                     className="img-fluid"
                     src="https://img.icons8.com/color/48/000000/mastercard-logo.png"
+                    alt="logo for mastercard credit/ debit service"
                   />
                   <div className="flex-fill mx-3">
                     <div className="form-outline">
@@ -56,6 +57,7 @@ export default function Basket() {
                   <img
                     className="img-fluid"
                     src="https://img.icons8.com/color/48/000000/visa.png"
+                    alt="logo for visa's credit/ debit card service"
                   />
                   <div className="flex-fill mx-3">
                     <div className="form-outline">

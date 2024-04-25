@@ -33,6 +33,7 @@ export default function RoomCards() {
                 height="350"
                 className="darkened-image rounded"
                 position="top"
+                alt="A Single room with 2 beds"
               />
               <MDBCardOverlay>
                 <MDBCardBody className="pb-5 mask">
@@ -66,6 +67,7 @@ export default function RoomCards() {
                 height="350"
                 className="darkened-image rounded"
                 position="top"
+                alt="A Double Bedroom with 1 Bed"
               />
               <MDBCardOverlay>
                 <MDBCardBody className="pb-5 mask">
@@ -99,6 +101,7 @@ export default function RoomCards() {
                 height="350"
                 className="darkened-image rounded"
                 position="top"
+                alt="A Double Bedroom with 2 Beds"
               />
               <MDBCardOverlay>
                 <MDBCardBody className="pb-5 mask">
@@ -132,6 +135,7 @@ export default function RoomCards() {
                 height="350"
                 className="darkened-image rounded"
                 position="top"
+                alt="A King sized Bedroom with 1 Bed"
               />
               <MDBCardOverlay>
                 <MDBCardBody className="pb-5 mask">
@@ -165,6 +169,7 @@ export default function RoomCards() {
                 height="350"
                 className="darkened-image rounded"
                 position="top"
+                alt="A Queen sized Bedroom with 1 Bed"
               />
               <MDBCardOverlay>
                 <MDBCardBody className="pb-5 mask">

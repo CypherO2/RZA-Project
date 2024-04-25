@@ -16,7 +16,11 @@ function SiteFooter() {
           <MDBRow>
             <MDBCol>
               <Row>
-                <img src={logo} style={{ height: "60px", width: "250px" }} />
+                <img
+                  src={logo}
+                  style={{ height: "60px", width: "250px" }}
+                  alt="Company/Zoo's Logo"
+                />
                 <p>
                   Riget Zoo Adventures, 23 Fake Rd, Faketonn
                   <br />

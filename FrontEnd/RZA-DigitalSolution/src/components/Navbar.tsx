@@ -83,7 +83,7 @@ function NavBar() {
               width="250"
               height="60"
               className="mx-5"
-              alt="Logo"
+              alt="Company / Zoo's Logo"
             />
           </Navbar.Brand>
           <Nav>
