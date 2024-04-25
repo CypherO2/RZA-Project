@@ -3,6 +3,11 @@ import { COUNTRY_DROPDOWN_OPTIONS } from "../constants/Countries";
 import { Form } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../assets/RZA2.png";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState, FormEvent, useContext } from "react";
+import { INDEX_PATH } from "../constants/paths";
+import { AccountDetailsContext } from "./accountProvider";
 
 function ListTitles() {
   return (
@@ -25,9 +30,45 @@ function ListCountries() {
 }
 
 export default function BookingForm() {
+  const accountDetailsContext = useContext(AccountDetailsContext);
+  const navigate = useNavigate();
+  const [responseText, setResponseText] = useState("");
+  const [reservationName, setReservationName] = useState("");
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    setResponseText("");
+    // querying backend
+    try {
+      const response = await axios.post("http://localhost:5000/signup", {
+        username: username,
+        password: password,
+        email: email,
+      });
+      setResponseText(response.data["message"]);
+      // console.log(response?.data);
+      // if success == true : set password + username -> accountDetails
+      if (response?.data["success"]) {
+        accountDetailsContext?.setAccountDetails({
+          username,
+          password,
+          membership: response?.data["membership"],
+          role: response?.data["role"],
+        });
+        // forceful redirection
+        navigate(INDEX_PATH);
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        setResponseText(error.message);
+      } else {
+        setResponseText(String(error));
+      }
+    }
+  };
   return (
     <>
-      <Container className="border border-dark p-5 my-5">
+      <Container className="rounded-corners-border p-5 my-5">
         <div className="text-center p-2">
           <img
             alt="The Company/ Zoo's Logo"
@@ -37,10 +78,10 @@ export default function BookingForm() {
           />
         </div>
         <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label className="pt-2">Full Name</Form.Label>
+          <Form.Label className="pt-2">Reservation Name</Form.Label>
           <Row>
             <Col sm={2}>
-              <Form.Select aria-label="Default select example">
+              <Form.Select aria-label="Default select example" onSubmit={}>
                 <option>Title</option>
                 <ListTitles />
               </Form.Select>
@@ -71,38 +112,6 @@ export default function BookingForm() {
           </Row>
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
-          </Form.Text>
-          <br />
-          <Form.Label className="pt-2">Address</Form.Label>
-          <Form.Control
-            type="address"
-            placeholder="Enter your Address"
-            required
-          />
-          <br />
-          <Form.Control type="address" placeholder="Enter your Address" />
-          <br />
-          <Row>
-            <Form>
-              <Row>
-                <Col xs={7}>
-                  <Form.Control placeholder="City" />
-                </Col>
-                <Col>
-                  <Form.Control placeholder="ZIP/ Postcode" />
-                </Col>
-                <Col>
-                  <Form.Select aria-label="Default select example">
-                    <option>Country</option>
-                    <ListCountries />
-                  </Form.Select>
-                </Col>
-              </Row>
-            </Form>
-            <Col></Col>
-          </Row>
-          <Form.Text className="text-muted">
-            We'll never share this with anyone.
           </Form.Text>
         </Form.Group>
       </Container>
