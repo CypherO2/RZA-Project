@@ -227,11 +227,18 @@ def StaffSignupDetails():
             return jsonify({"success": False, "message": "Internal Server Error"})
 
 
+RoomTypes = ["Single", "Double", "King", "Queen"]
+
+# The `@app.route("/reserve", methods=["POST"])` decorator in the Flask application is defining a
+# route for handling POST requests to create a new staff account. When a POST request is made to the
+# "/reserve" endpoint, the `reserve()` function is executed to process the request and
+# handle the creation of a new booking in the database as well as alter the room to be unavailable.
 @app.route("/reserve", methods=["POST"])
 def reserve():
     print("Request Recieved")
     with sqlite3.connect(r"Database/RZA-Data.db") as conn:
         print("Connection Established")
+    username = request.json.get("username")
     reservationName = request.json.get("reservationName")
     print(reservationName)
     check_in_date = request.json.get("checkin")
@@ -241,12 +248,16 @@ def reserve():
     if not LF.IsDate(check_out_date):
         return jsonify({"success": False, "message": "Check Out is NOT a valid Date"})
     print("Check In Date:", check_in_date, "\nCheck Out Date:", check_out_date)
+    roomType = request.json.get("roomType")
+    if not roomType in RoomTypes:
+        return jsonify({"success": False, "message": "room type is invalid"})
+    print("Room Type:", roomType)
     try:
         cu = conn.cursor()
         print("Cursor Created")
         try:
-            query = """SELECT RoomID FROM Rooms WHERE Avaliable = 1"""
-            cu.execute(query)
+            query = """SELECT RoomID FROM Rooms WHERE Avaliable = 1 AND RoomType = ?"""
+            cu.execute(query, (roomType,))
             AvaliableRooms = cu.fetchall()
             print("Available Rooms:", AvaliableRooms)
             Rooms = []
@@ -256,14 +267,52 @@ def reserve():
             chosen_room = random.choice(Rooms)
             print("Chosen Room:", chosen_room)
             try:
-                update = """UPDATE Rooms SET"""
-
+                delete = """DELETE FROM Rooms WHERE RoomID = ?"""
+                cu.execute(delete, (chosen_room,))
+                conn.commit()
+                print("Deletion Successful")
                 try:
-                    insert = """INSERT INTO RoomBookings"""
-                except:
-                    print("An error has occurred when inserting into the table")
-            except:
-                print("An Error Occurred Updating the Rooms Record")
+                    reintroduction = """INSERT INTO Rooms(RoomID, RoomNumber, Avaliable, RoomType) VALUES(?,?,?,?)"""
+                    cu.execute(reintroduction, (chosen_room, chosen_room, 2, roomType))
+                    conn.commit()
+                    print("Reintroduction Successful")
+                    try:
+                        newQuery = """SELECT UserID FROM Users WHERE Username = ?"""
+                        print(username)
+                        cu.execute(newQuery, (username,))
+                        userID = cu.fetchall()
+                        userID = userID[0][0]
+                        print("UserID:", userID)
+                        try:
+                            insert = """INSERT INTO RoomBookings(CheckInDate, CheckOutDate, RoomID, UserID, ReservationName) VALUES(?,?,?,?,?)"""
+
+                            cu.execute(
+                                insert,
+                                (
+                                    check_in_date,
+                                    check_out_date,
+                                    chosen_room,
+                                    userID,
+                                    reservationName,
+                                ),
+                            )
+                            conn.commit()
+                            print("Insertion Complete, Room is Booked")
+                        except Error as e:
+                            print(
+                                "An error has occurred when inserting into the table:\n",
+                                e,
+                            )
+                    except Error as e:
+                        print("An Error Has Occurred:", e)
+                except Error as e:
+                    print(
+                        "An Error has occurred re-introducing data to the database:\n",
+                        e,
+                    )
+
+            except Error as e:
+                print("An Error Occurred Updating the Rooms Record:", e)
 
         except:
             print("Error has occurred in room avaliablity")

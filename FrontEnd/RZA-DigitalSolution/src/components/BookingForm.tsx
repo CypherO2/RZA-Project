@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import logo from "../assets/RZA2.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState, FormEvent, useContext } from "react";
+import { useState, FormEvent, useContext, useEffect } from "react";
 import { INDEX_PATH } from "../constants/paths";
 import { AccountDetailsContext } from "./accountProvider";
 import { BookingContext } from "./bookingProvider";
@@ -38,6 +38,17 @@ export default function BookingForm() {
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [reservationName, setReservationName] = useState("");
+  const [roomType, setRoomType] = useState("");
+
+  useEffect(() => {
+    if (Object.is(accountDetailsContext?.accountDetails, null)) {
+      console.log("Redirecting");
+      navigate(INDEX_PATH);
+    } else if (accountDetailsContext?.accountDetails?.role === undefined) {
+      console.log("Redirecting");
+      navigate(INDEX_PATH);
+    }
+  });
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -49,6 +60,7 @@ export default function BookingForm() {
         checkin: checkInDate,
         checkout: checkOutDate,
         reservationName: reservationName,
+        roomType: roomType,
       });
       setResponseText(response.data["message"]);
 
@@ -136,13 +148,15 @@ export default function BookingForm() {
                 </Col>
                 <Col>
                   <Form.Label className="pt-2">Room type</Form.Label>
-                  <Form.Select>
+                  <Form.Select
+                    required
+                    onChange={(e) => setRoomType(e.target.value)}
+                  >
                     <option>Select a Room</option>
-                    <option>Single Room | 1 Bed</option>
-                    <option>Single Room | 2 Beds</option>
-                    <option>Double Room</option>
-                    <option>King Room</option>
-                    <option>Queen Room</option>
+                    <option>Single</option>
+                    <option>Double</option>
+                    <option>King</option>
+                    <option>Queen</option>
                   </Form.Select>
                 </Col>
               </Row>
