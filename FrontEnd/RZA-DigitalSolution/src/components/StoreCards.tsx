@@ -8,8 +8,8 @@ import {
   MDBCardOverlay,
 } from "mdb-react-ui-kit";
 import { Row, Col, Container, Badge } from "react-bootstrap";
+import { useContext, useState } from "react";
 import { BasketContext } from "./BasketProvider";
-import { useContext } from "react";
 
 export interface StoreCardProps {
   item: string;
@@ -21,6 +21,7 @@ export interface StoreCardProps {
 
 function StoreCard({ item, price, desc, type, url }: StoreCardProps) {
   const basketContext = useContext(BasketContext);
+
   return (
     <Col className="pt-1">
       <MDBCard
@@ -49,13 +50,13 @@ function StoreCard({ item, price, desc, type, url }: StoreCardProps) {
 
             <MDBCardText className="mb-5 text-light">{desc}</MDBCardText>
             <Container className="py-2 pb-4 mx-1 px-1 text-white position-absolute bottom-0 fw-bold fs-5">
-              £{price.toFixed(2)}
+              £{price}
               <Button
                 className="text-light fw-bold px-4 mx-4"
                 variant="outline-warning"
                 onClick={() => basketContext?.addToBasket(item)}
               >
-                <h6 className="my-1 px-2">Pre-Order</h6>
+                <h6 className="my-1 px-2">Purchase</h6>
               </Button>
             </Container>
           </MDBCardBody>

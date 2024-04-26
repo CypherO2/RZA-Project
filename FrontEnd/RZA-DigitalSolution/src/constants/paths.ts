@@ -18,8 +18,10 @@ const TANDC_PATH = "/ts-and-cs";
 const SIGNUP_PATH = "/signup";
 const BOOKING_PATH = "/ukesbf7JHBS8w98u";
 const PROFILE_PATH = "/ldyusfg8esdfni38wf9u";
+const BASKET_PATH = "/basket";
 
 export {
+  BASKET_PATH,
   FAQ_PATH,
   PROFILE_PATH,
   STORE_PATH,

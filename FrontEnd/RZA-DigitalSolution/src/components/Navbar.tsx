@@ -4,6 +4,7 @@ import LoginModal from "./LoginModal";
 import { Menu, Home } from "@carbon/react/icons";
 import {
   ABOUT_PATH,
+  BASKET_PATH,
   CHECKOUT_PATH,
   CONTACTS_PATH,
   FAQ_PATH,
@@ -44,7 +45,7 @@ function Log() {
               {accountDetailsContext?.accountDetails?.membership}
             </span>
           </Dropdown.Item>
-          <Dropdown.Item href={CHECKOUT_PATH}>Basket</Dropdown.Item>
+          <Dropdown.Item href={BASKET_PATH}>Basket</Dropdown.Item>
           <Dropdown.Item
             href="/"
             onClick={() => accountDetailsContext?.setAccountDetails(null)}
