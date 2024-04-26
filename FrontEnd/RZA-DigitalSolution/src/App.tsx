@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   ABOUT_PATH,
+  BASKET_PATH,
   BOOKING_PATH,
   CHECKOUT_PATH,
   CONTACTS_PATH,
@@ -31,7 +32,6 @@ import StorePage from "./pages/Store";
 import FAQ from "./pages/Faq";
 import RoomPage from "./pages/Rooms";
 import LearningPage from "./pages/Learn";
-import DashboardPage from "./pages/Dashboard";
 import StaffDashboard from "./pages/StaffDashboard";
 import MSA from "./pages/ModernSlaveryPage";
 import CookiePolicy from "./pages/CookiesPolicy";
@@ -41,10 +41,10 @@ import "./css/components.css";
 import SignupForm from "./components/SignUp";
 import AccountProvider from "./components/accountProvider";
 import BasketProvider from "./components/BasketProvider";
-import Checkout from "./pages/Basket";
+import Checkout from "./pages/PaymentPortal";
+import Basket from "./pages/Basket";
 import Error from "./pages/NotFound";
 import Booking from "./pages/Booking";
-import ProfileCards from "./pages/Profile";
 import Profile from "./pages/Profile";
 
 /* The `function App() {` is defining a functional component named `App`. This component is the root
@@ -66,7 +66,6 @@ function App() {
             <Route path={FAQ_PATH} element={<FAQ />} />
             <Route path={ROOM_PATH} element={<RoomPage />} />
             <Route path={LEARN_PATH} element={<LearningPage />} />
-            <Route path={DASHBOARD_PATH} element={<DashboardPage />} />
             <Route path={STAFF_DASHBOARD_PATH} element={<StaffDashboard />} />
             <Route path={MSA_PATH} element={<MSA />} />
             <Route path={COOKIE_PATH} element={<CookiePolicy />} />
@@ -77,6 +76,7 @@ function App() {
             <Route path={BOOKING_PATH} element={<Booking />} />
             <Route path={NOT_FOUND_PATH} element={<Error />} />
             <Route path={PROFILE_PATH} element={<Profile />} />
+            <Route path={BASKET_PATH} element={<Basket />} />
           </Routes>
           <SiteFooter />
         </BasketProvider>
