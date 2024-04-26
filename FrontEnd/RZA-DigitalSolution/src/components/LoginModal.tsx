@@ -31,17 +31,6 @@ function LoginModal() {
 
       <Modal data-bs-theme="dark" show={show} onHide={handleClose} centered>
         <LoginForm />
-        {/* 
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <LoginForm />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     </>
   );
