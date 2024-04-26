@@ -27,7 +27,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 def LoginDetails():
     logins = {}
     print("Request Recieved")
-    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
+    with sqlite3.connect(r"/workspaces/Lorem-Ipsum/Database/RZA-Data.db") as conn:
         print("Connection Established")
         username = request.json.get("username")
         if LF.UsernameCheck(username):
@@ -93,7 +93,7 @@ def LoginDetails():
 @app.route("/signup", methods=["POST"])
 def SignupDetails():
     print("Request Recieved")
-    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
+    with sqlite3.connect(r"/workspaces/Lorem-Ipsum/Database/RZA-Data.db") as conn:
         print("Connection Established")
         username = request.json.get("username")
         print("username:", username)
@@ -164,7 +164,7 @@ def SignupDetails():
 @app.route("/staffsignup", methods=["POST"])
 def StaffSignupDetails():
     print("Request Recieved")
-    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
+    with sqlite3.connect(r"/workspaces/Lorem-Ipsum/Database/RZA-Data.db") as conn:
         print("Connection Established")
         email = request.json.get("email")
         if not LF.EmailCheck(email):
@@ -236,7 +236,7 @@ RoomTypes = ["Single", "Double", "King", "Queen"]
 @app.route("/reserve", methods=["POST"])
 def reserve():
     print("Request Recieved")
-    with sqlite3.connect(r"Database/RZA-Data.db") as conn:
+    with sqlite3.connect(r"/workspaces/Lorem-Ipsum/Database/RZA-Data.db") as conn:
         print("Connection Established")
     username = request.json.get("username")
     reservationName = request.json.get("reservationName")
@@ -320,6 +320,37 @@ def reserve():
     except:
         print("Error > > > Could Not Create Cursor @ Reservation")
 
+# The above code is defining a route "/store" in a Python web application using Flask framework. This
+# route is set up to handle HTTP GET requests.
+@app.route("/store", methods=["GET"])
+def storeDetails():
+    print("Request Recieved")
+    with sqlite3.connect(
+        r"/workspaces/Lorem-Ipsum/Database/RZA-Data.db"
+    ) as conn:
+        print("Connection Established")
+        query = """SELECT * FROM Store"""
+        cu = conn.cursor()
+        cu.execute(query)
+        storeItems = cu.fetchall()
+        # print(menuItems[0])
+        storeItemsList = []
+        for i in storeItems:
+            print(i[1:])
+            item = i[1]
+            type = i[2]
+            desc = i[3]
+            price = i[4]
+            url = i[5]
+            json = {
+                "item": item,
+                "type": type,
+                "desc": desc,
+                "price": price,
+                "url": url,
+            }
+            storeItemsList.append(json)
+        return jsonify({"storeItems": storeItemsList})
 
 if __name__ == "__main__":
     app.run()
