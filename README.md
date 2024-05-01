@@ -3,6 +3,12 @@
 > [!IMPORTANT]  
 > The comments throughout this code are AI assisted utilising the VSCode Extension "[Mintlyfiy Doc Writer](https://writer.mintlify.com/)".
 
+> [!IMPORTANT]  
+> Additionally, this repository is only public for the purpose of gathering feedback from the community and as such will be made private upon collection of said feedback
+
+> [!NOTE]  
+> To leave feedback visit the following links: [Feedback](#Feedback)
+
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -142,6 +148,13 @@ This site does NOT work on:
 
 ![Safari](https://img.shields.io/badge/Safari-000000?style=for-the-badge&logo=Safari&logoColor=white)
 ![IE](https://img.shields.io/badge/Internet%20Explorer-0076D6?style=for-the-badge&logo=Internet%20Explorer&logoColor=white)
+
+## Feedback
+
+To leave feedback visit either:
+- [For the ReactTS/ Frontend](https://forms.office.com/r/YWx7i0ub9a)
+- [For the Python/ Backend](https://forms.office.com/r/LSzV5bdgHq)
+
 
 ## License
 
