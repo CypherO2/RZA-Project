@@ -3,9 +3,6 @@
 > [!IMPORTANT]  
 > The comments throughout this code are AI assisted utilising the VSCode Extension "[Mintlyfiy Doc Writer](https://writer.mintlify.com/)".
 
-> [!IMPORTANT]  
-> Additionally, this repository is only public for the purpose of gathering feedback from the community and as such will be made private upon collection of said feedback
-
 > [!NOTE]  
 > To leave feedback visit the following links: [Feedback](#Feedback)
 
